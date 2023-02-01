@@ -1586,7 +1586,7 @@ MESSAGES:
   message10: .asciiz "Bank error in   "
   message11: .asciiz "your favor +$20 "
   message12: .asciiz "Artsy ventures? "
-  message13: .asciiz "go rob a muesum "
+  message13: .asciiz "go rob a museum "
   message14: .asciiz "break into jail "
   message15: .asciiz "cop   brutality "
 
@@ -1654,7 +1654,7 @@ MESSAGES:
 
 
   m5: .asciiz "A journey in    "
-  m52: .asciiz "newark is soon  "
+  m52: .asciiz "Newark is soon  "
   m53: .asciiz "Be careful this "
   m54: .asciiz "is classified:  "
   m55: .asciiz "Be alert: a man "
@@ -1692,7 +1692,7 @@ MESSAGES:
 
 
   m7: .asciiz "Im a phantom and"
-  m72: .asciiz "i'm here to see "
+  m72: .asciiz "I'm here to see "
   m73: .asciiz "Better to bow   "
   m74: .asciiz "legged then not "
   m75: .asciiz "Dont fight bird "
@@ -1710,7 +1710,7 @@ MESSAGES:
 
 
  
-  m8: .asciiz "An irish man is "
+  m8: .asciiz "An Irish man is "
   m82: .asciiz "at peace ina pub"
   m83: .asciiz "I marvel at the "
   m84: .asciiz "power of emotion"
@@ -1730,7 +1730,7 @@ MESSAGES:
 
 
   m9: .asciiz "40 isn't old if "
-  m92: .asciiz "your a tree     "
+  m92: .asciiz "you're a tree   "
   m93: .asciiz "agree with them "
   m94: .asciiz "it saves time   "
   m95: .asciiz "Am I ranting?   "
@@ -1739,7 +1739,7 @@ MESSAGES:
   m98: .asciiz "all of society  "
   m99: .asciiz "Give me 6 hours "
   m910: .asciiz "to cut down a   "
-  m911: .asciiz "tree and i'll   "
+  m911: .asciiz "tree and I'll   "
   m912: .asciiz "spend the first "
   m913: .asciiz "four sharpening "
   m914: .asciiz "the axe         "
@@ -1772,16 +1772,16 @@ MESSAGES:
   m113: .asciiz "In event of fire"
   m114: .asciiz "yell fire loudly"
   m115: .asciiz "When is the end "
-  m116: .asciiz "of the begining?"
+  m116: .asciiz "of the start?   "
   m117: .asciiz "Running down a  "
   m118: .asciiz "hill is easier  "
   m119: .asciiz "Luck has nothing"
   m1110: .asciiz "to do with this "
-  m1111: .asciiz "Spectauclar     "
-  m1112: .asciiz "achievemnt is   "
+  m1111: .asciiz "Spectacular     "
+  m1112: .asciiz "achievement is  "
   m1113: .asciiz "always preceded "
   m1114: .asciiz "by unspectacular"
-  m1115: .asciiz "preperation.    "
+  m1115: .asciiz "preparation.    "
 
 
 
@@ -1815,7 +1815,7 @@ MESSAGES:
   m138: .asciiz "not a repeat!   "
   m139: .asciiz "Would ya like to"
   m1310: .asciiz "purchase a duck?"
-  m1311: .asciiz "the writting is "
+  m1311: .asciiz "the writing is  "
   m1312: .asciiz "on the wall     "
   m1313: .asciiz "I'm afraid your "
   m1314: .asciiz "friend Mathis is"
@@ -1951,18 +1951,18 @@ MESSAGES:
   m2011: .asciiz "My hands turn as"
   m2012: .asciiz "time passes by  "
   m2013: .asciiz "Postpone        "
-  m2014: .asciiz "    preordain   "
+  m2014: .asciiz "     preordain  "
   m2015: .asciiz "      chronoboss"
 
 
 
 
   m21: .asciiz "Monkies go oh oh"
-  m21_2: .asciiz "I go ah ah     "
-  m21_3: .asciiz "Fruit snacks   "
-  m21_4: .asciiz "cure my munchie"
-  m21_5: .asciiz "I’m the DJ:    "
-  m21_6: .asciiz "Disk Jockey    "
+  m21_2: .asciiz "I go ah ah      "
+  m21_3: .asciiz "Fruit snacks    "
+  m21_4: .asciiz "cure my munchie "
+  m21_5: .asciiz "I’m the DJ:     "
+  m21_6: .asciiz "Disk Jockey     "
   m217: .asciiz "Hot dogs aren’t "
   m218: .asciiz "all for buns    "
   m219: .asciiz "I love to break "
@@ -1991,6 +1991,9 @@ MESSAGES:
   m2213: .asciiz "Computer Boot   "
   m2214: .asciiz "but don't take a"
   m2215: .asciiz "boot to Computer"
+
+
+
 
 
 
