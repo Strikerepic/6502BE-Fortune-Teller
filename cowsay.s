@@ -1028,7 +1028,7 @@ PRE_PRINT14:
   
 MESSAGE_PRINT_TOPLINE14:
   cpx #$FF
-  beq WARP_JUMP
+  beq PRE_PRE_PRE_PRINT15
   lda m14,x
   beq START_NEWLINE14
   jsr LCD_WRITE_LETTER
@@ -1043,12 +1043,216 @@ START_NEWLINE14:
 
 MESSAGE_PRINT_BOTTOMLINE14:
   cpx #$FF
-  beq WARP_JUMP
+  beq PRE_PRE_PRE_PRINT15
   lda m14,x
   beq PRE_PRE_PRINT14
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE14
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT15:
+  ldx #$00
+  jmp PRE_PRINT15
+
+PRE_PRE_PRINT15:
+  inx
+PRE_PRINT15:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  
+
+  lda #%00000001 ; Clears Display 
+  jsr LCD_COMMAND
+
+  lda #%00000010 ; Returns home
+  jsr LCD_COMMAND
+
+
+
+
+  MESSAGE_PRINT_TOPLINE15:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT16
+  lda m15,x
+  beq START_NEWLINE15
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE15
+
+
+START_NEWLINE15:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE15:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT16
+  lda m15,x
+  beq PRE_PRE_PRINT15
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE15
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT16:
+  ldx #$00
+  jmp PRE_PRINT16
+
+PRE_PRE_PRINT16:
+  inx
+PRE_PRINT16:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  
+
+  lda #%00000001 ; Clears Display 
+  jsr LCD_COMMAND
+
+  lda #%00000010 ; Returns home
+  jsr LCD_COMMAND
+
+
+
+
+  MESSAGE_PRINT_TOPLINE16:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT17
+  lda m16,x
+  beq START_NEWLINE16
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE17
+
+
+START_NEWLINE16:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE16:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT17
+  lda m16,x
+  beq PRE_PRE_PRINT16
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE16
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT17:
+  ldx #$00
+  jmp PRE_PRINT17
+
+PRE_PRE_PRINT17:
+  inx
+PRE_PRINT17:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  
+
+  lda #%00000001 ; Clears Display 
+  jsr LCD_COMMAND
+
+  lda #%00000010 ; Returns home
+  jsr LCD_COMMAND
+
+
+
+
+  MESSAGE_PRINT_TOPLINE17:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT18
+  lda m17,x
+  beq START_NEWLINE17
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE17
+
+
+START_NEWLINE16:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE17:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT18
+  lda m17,x
+  beq PRE_PRE_PRINT17
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE17
 
 
 
