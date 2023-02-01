@@ -1200,34 +1200,7 @@ PRE_PRE_PRINT17:
   inx
 PRE_PRINT17:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
   MESSAGE_PRINT_TOPLINE17:
@@ -1240,7 +1213,7 @@ PRE_PRINT17:
   jmp MESSAGE_PRINT_TOPLINE17
 
 
-START_NEWLINE16:
+START_NEWLINE17:
   lda #%0011000000    ; Start at the begining of the second line
   jsr LCD_COMMAND
   inx
@@ -1266,6 +1239,244 @@ MESSAGE_PRINT_BOTTOMLINE17:
 
 
 
+
+
+
+PRE_PRE_PRE_PRINT18:
+  ldx #$00
+  jmp PRE_PRINT18
+
+PRE_PRE_PRINT18:
+  inx
+PRE_PRINT18:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE18:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT19
+  lda m18,x
+  beq START_NEWLINE18
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE18
+
+
+START_NEWLINE18:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE18:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT19
+  lda m18,x
+  beq PRE_PRE_PRINT18
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE18
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT19:
+  ldx #$00
+  jmp PRE_PRINT19
+
+PRE_PRE_PRINT19:
+  inx
+PRE_PRINT19:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE19:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT20
+  lda m19,x
+  beq START_NEWLINE19
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE19
+
+
+START_NEWLINE19:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE19:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT20
+  lda m19,x
+  beq PRE_PRE_PRINT19
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT20:
+  ldx #$00
+  jmp PRE_PRINT20
+
+PRE_PRE_PRINT20:
+  inx
+PRE_PRINT20:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE20:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT21
+  lda m20,x
+  beq START_NEWLINE20
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE20
+
+
+START_NEWLINE20:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE20:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT21
+  lda m20,x
+  beq PRE_PRE_PRINT20
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE20
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT21:
+  ldx #$00
+  jmp PRE_PRINT21
+
+PRE_PRE_PRINT21:
+  inx
+PRE_PRINT21:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE21:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT22
+  lda m21,x
+  beq START_NEWLINE21
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE21
+
+
+START_NEWLINE21:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE21:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT22
+  lda m21,x
+  beq PRE_PRE_PRINT21
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE21
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT22:
+  ldx #$00
+  jmp PRE_PRINT22
+
+PRE_PRE_PRINT22:
+  inx
+PRE_PRINT22:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE22:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT23
+  lda m22_,x
+  beq START_NEWLINE22
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE22
+
+
+START_NEWLINE22:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE22:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT23
+  lda mm22_,x
+  beq PRE_PRE_PRINT22
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE22
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
  
 
 
@@ -1276,17 +1487,36 @@ MESSAGE_PRINT_BOTTOMLINE17:
 
 
 
+PRE_PRINTSUB:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  
+  lda #%00000001 ; Clears Display 
+  jsr LCD_COMMAND
 
-
-
-
-
-
-
-
-
-
-
+  lda #%00000010 ; Returns home
+  jsr LCD_COMMAND
+  rts
+  
+  
 LCD_DELAY:
   pha
   lda #%00000000 ; DATADIRB is now input to read state of busy flag
@@ -1721,7 +1951,7 @@ MESSAGES:
   m2011: .asciiz "My hands turn as"
   m2012: .asciiz "time passes by  "
   m2013: .asciiz "Postpone        "
-  m2014: .asciiz "     preordain  "
+  m2014: .asciiz "    preordain   "
   m2015: .asciiz "      chronoboss"
 
 
