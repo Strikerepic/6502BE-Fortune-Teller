@@ -1664,7 +1664,7 @@ MESSAGES:
   m59: .asciiz "Great power     "
   m510: .asciiz "big power bill  "
   m511: .asciiz "oily toes boosts"
-  m512: .asciiz "speed sharpley  "
+  m512: .asciiz "speed sharply   "
   m513: .asciiz "Excellent time  "
   m514: .asciiz "to buy 1000 SPY "
   m515: .asciiz "option puts     "
