@@ -1421,11 +1421,8 @@ PRE_PRINT22:
 
   MESSAGE_PRINT_TOPLINE22:
   cpx #$FF
-<<<<<<< HEAD
   beq PRE_PRE_PRE_PRINT22
-=======
   beq PRE_PRE_PRE_PRINT23
->>>>>>> 4d3782b55679b068dde29066ba09c8e02eef5d23
   lda m22_,x
   beq START_NEWLINE22
   jsr LCD_WRITE_LETTER
@@ -1440,13 +1437,10 @@ START_NEWLINE22:
 
 MESSAGE_PRINT_BOTTOMLINE22:
   cpx #$FF
-<<<<<<< HEAD
   beq PRE_PRE_PRE_PRINT22
   lda m22_,x
-=======
   beq PRE_PRE_PRE_PRINT23
   lda mm22_,x
->>>>>>> 4d3782b55679b068dde29066ba09c8e02eef5d23
   beq PRE_PRE_PRINT22
   jsr LCD_WRITE_LETTER
   inx
@@ -1458,7 +1452,6 @@ MESSAGE_PRINT_BOTTOMLINE22:
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -1505,8 +1498,6 @@ MESSAGE_PRINT_BOTTOMLINE23:
 
 
 
-=======
->>>>>>> 4d3782b55679b068dde29066ba09c8e02eef5d23
   
 
 
@@ -2001,15 +1992,12 @@ MESSAGES:
   m21_2: .asciiz "I go ah ah      "
   m21_3: .asciiz "Fruit snacks    "
   m21_4: .asciiz "cure my munchie "
-<<<<<<< HEAD
   m21_5: .asciiz "I'm the DJ:     "
   m21_6: .asciiz "Disk Jockey     "
   m217: .asciiz "Hot dogs aren't "
-=======
   m21_5: .asciiz "I’m the DJ:     "
   m21_6: .asciiz "Disk Jockey     "
   m217: .asciiz "Hot dogs aren’t "
->>>>>>> 4d3782b55679b068dde29066ba09c8e02eef5d23
   m218: .asciiz "all for buns    "
   m219: .asciiz "I love to break "
   m2110: .asciiz "like glass      "
