@@ -1133,25 +1133,7 @@ PRE_PRE_PRINT16:
   inx
 PRE_PRINT16:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
+  jsr PRE_PRINTSUB
   
 
   lda #%00000001 ; Clears Display 
@@ -1200,34 +1182,7 @@ PRE_PRE_PRINT17:
   inx
 PRE_PRINT17:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
   MESSAGE_PRINT_TOPLINE17:
@@ -1240,7 +1195,7 @@ PRE_PRINT17:
   jmp MESSAGE_PRINT_TOPLINE17
 
 
-START_NEWLINE16:
+START_NEWLINE17:
   lda #%0011000000    ; Start at the begining of the second line
   jsr LCD_COMMAND
   inx
@@ -1266,6 +1221,290 @@ MESSAGE_PRINT_BOTTOMLINE17:
 
 
 
+
+
+
+PRE_PRE_PRE_PRINT18:
+  ldx #$00
+  jmp PRE_PRINT18
+
+PRE_PRE_PRINT18:
+  inx
+PRE_PRINT18:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE18:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT19
+  lda m18,x
+  beq START_NEWLINE18
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE18
+
+
+START_NEWLINE18:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE18:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT19
+  lda m18,x
+  beq PRE_PRE_PRINT18
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE18
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT19:
+  ldx #$00
+  jmp PRE_PRINT19
+
+PRE_PRE_PRINT19:
+  inx
+PRE_PRINT19:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE19:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT20
+  lda m19,x
+  beq START_NEWLINE19
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE19
+
+
+START_NEWLINE19:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE19:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT20
+  lda m19,x
+  beq PRE_PRE_PRINT19
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT20:
+  ldx #$00
+  jmp PRE_PRINT20
+
+PRE_PRE_PRINT20:
+  inx
+PRE_PRINT20:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE20:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT21
+  lda m20,x
+  beq START_NEWLINE20
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE20
+
+
+START_NEWLINE20:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE20:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT21
+  lda m20,x
+  beq PRE_PRE_PRINT20
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE20
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT21:
+  ldx #$00
+  jmp PRE_PRINT21
+
+PRE_PRE_PRINT21:
+  inx
+PRE_PRINT21:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE21:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT22
+  lda m21,x
+  beq START_NEWLINE21
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE21
+
+
+START_NEWLINE21:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE21:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT22
+  lda m21,x
+  beq PRE_PRE_PRINT21
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE21
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT22:
+  ldx #$00
+  jmp PRE_PRINT22
+
+PRE_PRE_PRINT22:
+  inx
+PRE_PRINT22:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE22:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT22
+  lda m22_,x
+  beq START_NEWLINE22
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE22
+
+
+START_NEWLINE22:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE22:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT22
+  lda m22_,x
+  beq PRE_PRE_PRINT22
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE22
+
+
+
+
+
+
+
+
+
+
+
+  
+PRE_PRE_PRE_PRINT23:
+  ldx #$00
+  jmp PRE_PRINT23
+
+PRE_PRE_PRINT23:
+  inx
+PRE_PRINT23:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE23:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT23
+  lda m23_,x
+  beq START_NEWLINE23
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE23
+
+
+START_NEWLINE23:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE23:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT23
+  lda m23_,x
+  beq PRE_PRE_PRINT23
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE23
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
  
 
 
@@ -1276,17 +1515,36 @@ MESSAGE_PRINT_BOTTOMLINE17:
 
 
 
+PRE_PRINTSUB:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  
+  lda #%00000001 ; Clears Display 
+  jsr LCD_COMMAND
 
-
-
-
-
-
-
-
-
-
-
+  lda #%00000010 ; Returns home
+  jsr LCD_COMMAND
+  rts
+  
+  
 LCD_DELAY:
   pha
   lda #%00000000 ; DATADIRB is now input to read state of busy flag
@@ -1356,7 +1614,7 @@ MESSAGES:
   message10: .asciiz "Bank error in   "
   message11: .asciiz "your favor +$20 "
   message12: .asciiz "Artsy ventures? "
-  message13: .asciiz "go rob a muesum "
+  message13: .asciiz "go rob a museum "
   message14: .asciiz "break into jail "
   message15: .asciiz "cop   brutality "
 
@@ -1409,7 +1667,7 @@ MESSAGES:
   m43: .asciiz "Don't kiss an   "
   m44: .asciiz "elephant today  "
   m45: .asciiz "---Don't Worry  "
-  m46: .asciiz "Be Happy! : --- "
+  m46: .asciiz "Be Happy! :) -- "
   m47: .asciiz "time to become  "
   m48: .asciiz "a big dude man  "
   m49: .asciiz "You will spill  "
@@ -1424,7 +1682,7 @@ MESSAGES:
 
 
   m5: .asciiz "A journey in    "
-  m52: .asciiz "newark is soon  "
+  m52: .asciiz "Newark is soon  "
   m53: .asciiz "Be careful this "
   m54: .asciiz "is classified:  "
   m55: .asciiz "Be alert: a man "
@@ -1434,7 +1692,7 @@ MESSAGES:
   m59: .asciiz "Great power     "
   m510: .asciiz "big power bill  "
   m511: .asciiz "oily toes boosts"
-  m512: .asciiz "speed sharpley  "
+  m512: .asciiz "speed sharply   "
   m513: .asciiz "Excellent time  "
   m514: .asciiz "to buy 1000 SPY "
   m515: .asciiz "option puts     "
@@ -1462,7 +1720,7 @@ MESSAGES:
 
 
   m7: .asciiz "Im a phantom and"
-  m72: .asciiz "i'm here to see "
+  m72: .asciiz "I'm here to see "
   m73: .asciiz "Better to bow   "
   m74: .asciiz "legged then not "
   m75: .asciiz "Dont fight bird "
@@ -1480,7 +1738,7 @@ MESSAGES:
 
 
  
-  m8: .asciiz "An irish man is "
+  m8: .asciiz "An Irish man is "
   m82: .asciiz "at peace ina pub"
   m83: .asciiz "I marvel at the "
   m84: .asciiz "power of emotion"
@@ -1500,7 +1758,7 @@ MESSAGES:
 
 
   m9: .asciiz "40 isn't old if "
-  m92: .asciiz "your a tree     "
+  m92: .asciiz "you're a tree   "
   m93: .asciiz "agree with them "
   m94: .asciiz "it saves time   "
   m95: .asciiz "Am I ranting?   "
@@ -1509,7 +1767,7 @@ MESSAGES:
   m98: .asciiz "all of society  "
   m99: .asciiz "Give me 6 hours "
   m910: .asciiz "to cut down a   "
-  m911: .asciiz "tree and i'll   "
+  m911: .asciiz "tree and I'll   "
   m912: .asciiz "spend the first "
   m913: .asciiz "four sharpening "
   m914: .asciiz "the axe         "
@@ -1542,16 +1800,16 @@ MESSAGES:
   m113: .asciiz "In event of fire"
   m114: .asciiz "yell fire loudly"
   m115: .asciiz "When is the end "
-  m116: .asciiz "of the begining?"
+  m116: .asciiz "of the start?   "
   m117: .asciiz "Running down a  "
   m118: .asciiz "hill is easier  "
   m119: .asciiz "Luck has nothing"
   m1110: .asciiz "to do with this "
-  m1111: .asciiz "Spectauclar     "
-  m1112: .asciiz "achievemnt is   "
+  m1111: .asciiz "Spectacular     "
+  m1112: .asciiz "achievement is  "
   m1113: .asciiz "always preceded "
   m1114: .asciiz "by unspectacular"
-  m1115: .asciiz "preperation.    "
+  m1115: .asciiz "preparation.    "
 
 
 
@@ -1585,7 +1843,7 @@ MESSAGES:
   m138: .asciiz "not a repeat!   "
   m139: .asciiz "Would ya like to"
   m1310: .asciiz "purchase a duck?"
-  m1311: .asciiz "the writting is "
+  m1311: .asciiz "the writing is  "
   m1312: .asciiz "on the wall     "
   m1313: .asciiz "I'm afraid your "
   m1314: .asciiz "friend Mathis is"
@@ -1602,7 +1860,7 @@ MESSAGES:
   m146: .asciiz "funny bone hurt "
   m147: .asciiz "banach tarski   "
   m148: .asciiz "paradox         "
-  m149: .asciiz "The only constant"
+  m149: .asciiz "The only delta  "
   m1410: .asciiz "is change       "
   m1411: .asciiz "* * * * * * * * "
   m1412: .asciiz " * * * * * * * *"
@@ -1615,7 +1873,7 @@ MESSAGES:
 
   m15: .asciiz "watching watches"
   m152: .asciiz "tells no time   "
-  m153: .asciiz "one doesn’t ask "
+  m153: .asciiz "one doesn't ask "
   m154: .asciiz "chips air flavor"
   m155: .asciiz "stone + sword = "
   m156: .asciiz "dull sword      "
@@ -1639,7 +1897,7 @@ MESSAGES:
   m165: .asciiz "a lazy cat, lies"
   m166: .asciiz "the truth, flies"
   m167: .asciiz "move in chess   "
-  m168: .asciiz "don’t in life   "
+  m168: .asciiz "don't in life   "
   m169: .asciiz "ski the slopes  "
   m1610: .asciiz "snow to slush   "
   m1611: .asciiz "speak softly,   "
@@ -1653,7 +1911,7 @@ MESSAGES:
 
   m17: .asciiz "No Shirt, No    "
   m172: .asciiz "shoes. Service! "
-  m173: .asciiz "Dwarves Mines,  "
+  m173: .asciiz "Dwarves Mine,  "
   m174: .asciiz "Elves Cast      "
   m175: .asciiz "To see curve the"
   m176: .asciiz "glass carefully "
@@ -1671,14 +1929,14 @@ MESSAGES:
 
 
   m18: .asciiz "Queens Rule     "
-  m182: .asciiz "    Dogs Drool "
+  m182: .asciiz "    Dogs Drool  "
   m183: .asciiz "Blueberries are "
   m184: .asciiz "purple to me?   "
   m185: .asciiz "feel my motion  "
   m186: .asciiz "know my wave    "
   m187: .asciiz "crimes Ive done "
   m188: .asciiz "stories Ive told"
-  m189: .asciiz "two people can’t"
+  m189: .asciiz "two people can't"
   m1810: .asciiz "fit on 1 swing  "
   m1811: .asciiz "sink on boats   "
   m1812: .asciiz "float on water  "
@@ -1690,7 +1948,7 @@ MESSAGES:
 
 
   m19: .asciiz "To my haters:   "
-  m192: .asciiz "stop lookin’    "
+  m192: .asciiz "stop lookin'    "
   m193: .asciiz "Boney fingers   "
   m194: .asciiz "grip strongly   "
   m195: .asciiz "Craft tools     "
@@ -1698,9 +1956,9 @@ MESSAGES:
   m197: .asciiz "To Create luck  "
   m198: .asciiz "act with skill  "
   m199: .asciiz "Invite me in    "
-  m1910: .asciiz "please I’m cold "
+  m1910: .asciiz "please I'm cold "
   m1911: .asciiz "look at my chain"
-  m1912: .asciiz "I’m BLINGIN’    "
+  m1912: .asciiz "I'm BLINGIN'    "
   m1913: .asciiz "I gotta piss so "
   m1914: .asciiz "bad I can taste "
   m1915: .asciiz "IT!!!!!!!!!!!!!!"
@@ -1710,8 +1968,8 @@ MESSAGES:
 
   m20: .asciiz "To look closely "
   m202: .asciiz "view from afar  "
-  m203: .asciiz "I’m insane      "
-  m204: .asciiz "I’m just cracked"
+  m203: .asciiz "I'm insane      "
+  m204: .asciiz "I'm just cracked"
   m205: .asciiz "Antlers are the "
   m206: .asciiz "branches of life"
   m207: .asciiz "Up is up when   "
@@ -1721,19 +1979,19 @@ MESSAGES:
   m2011: .asciiz "My hands turn as"
   m2012: .asciiz "time passes by  "
   m2013: .asciiz "Postpone        "
-  m2014: .asciiz "     preordain  "
+  m2014: .asciiz "   preordain    "
   m2015: .asciiz "      chronoboss"
 
 
 
 
   m21: .asciiz "Monkies go oh oh"
-  m21_2: .asciiz "I go ah ah     "
-  m21_3: .asciiz "Fruit snacks   "
-  m21_4: .asciiz "cure my munchie"
-  m21_5: .asciiz "I’m the DJ:    "
-  m21_6: .asciiz "Disk Jockey    "
-  m217: .asciiz "Hot dogs aren’t "
+  m21_2: .asciiz "I go ah ah      "
+  m21_3: .asciiz "Fruit snacks    "
+  m21_4: .asciiz "cure my munchie "
+  m21_5: .asciiz "I'm the DJ:     "
+  m21_6: .asciiz "Disk Jockey     "
+  m217: .asciiz "Hot dogs aren't "
   m218: .asciiz "all for buns    "
   m219: .asciiz "I love to break "
   m2110: .asciiz "like glass      "
@@ -1761,6 +2019,29 @@ MESSAGES:
   m2213: .asciiz "Computer Boot   "
   m2214: .asciiz "but don't take a"
   m2215: .asciiz "boot to Computer"
+
+
+
+
+  m23_: .asciiz "dip your toes   "
+  m232: .asciiz "water is nice   "
+  m233: .asciiz "OREO. Milks fav "
+  m234: .asciiz "coooookkkkiiieee"
+  m235: .asciiz "  Linux Users   "
+  m236: .asciiz "Installing Apps "
+  m237: .asciiz "Ah! The Roast is"
+  m238: .asciiz "Super Effective!"
+  m239: .asciiz "America Lives in"
+  m2310: .asciiz "the past tense  "
+  m2311: .asciiz "We aren't in    "
+  m2312: .asciiz "Kanssas Anymore!"
+  m2313: .asciiz "Goodnight Dallas"
+  m2314: .asciiz "Texas. Wherever "
+  m2315: .asciiz "you are!        "
+
+
+
+
 
 
 
