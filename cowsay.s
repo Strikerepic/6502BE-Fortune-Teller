@@ -14,6 +14,7 @@ reset:
   ldx #$ff
   txs
   ldx #$00
+  
 
   lda #%11111111 ; Data Direction for port b is now all output
   sta DATADIRB
