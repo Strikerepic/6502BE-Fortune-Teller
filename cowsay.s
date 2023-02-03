@@ -767,33 +767,7 @@ PRE_PRE_PRINT11:
   inx
 PRE_PRINT11:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
 
@@ -842,31 +816,7 @@ PRE_PRE_PRINT12:
   inx
 PRE_PRINT12:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -921,33 +871,7 @@ PRE_PRE_PRINT13:
   inx
 PRE_PRINT13:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
 
@@ -994,33 +918,7 @@ PRE_PRE_PRINT14:
   inx
 PRE_PRINT14:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
+  jsr PRE_PRINTSUB
 
 
 
@@ -1064,34 +962,7 @@ PRE_PRE_PRINT15:
   inx
 PRE_PRINT15:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
   MESSAGE_PRINT_TOPLINE15:
@@ -1135,14 +1006,6 @@ PRE_PRINT16:
   nop
   jsr PRE_PRINTSUB
   
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
 
 
   MESSAGE_PRINT_TOPLINE16:
@@ -2090,13 +1953,13 @@ MESSAGES:
   m246: .asciiz "become adults   "
   m247: .asciiz "7 Bullets 1 Mil "
   m248: .asciiz "Each. $7,000,000"
-  m249: .asciiz "Squeegee only   "
-  m2410: .asciiz "Works with water"
+  m249: .asciiz "Squeegees only  "
+  m2410: .asciiz "work with water "
   m2411: .asciiz "The Tsar Dances "
-  m2412: .asciiz "wunderbar in EU "
+  m2412: .asciiz "wunderbar       "
   m2413: .asciiz "Good ideas come "
   m2414: .asciiz "When one milks a"
-  m2415: .asciiz "cow rapidly     "
+  m2415: .asciiz "cow rapidly.    "
 
 
 
