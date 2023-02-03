@@ -1148,7 +1148,7 @@ PRE_PRINT16:
   MESSAGE_PRINT_TOPLINE16:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT17
-  lda m16,x
+  lda m16_,x
   beq START_NEWLINE16
   jsr LCD_WRITE_LETTER
   inx
@@ -1163,7 +1163,7 @@ START_NEWLINE16:
 MESSAGE_PRINT_BOTTOMLINE16:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT17
-  lda m16,x
+  lda m16_,x
   beq PRE_PRE_PRINT16
   jsr LCD_WRITE_LETTER
   inx
@@ -1422,7 +1422,7 @@ PRE_PRINT22:
   MESSAGE_PRINT_TOPLINE22:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT23
-  lda m22,x
+  lda m22_,x
   beq START_NEWLINE22
   jsr LCD_WRITE_LETTER
   inx
@@ -1437,7 +1437,7 @@ START_NEWLINE22:
 MESSAGE_PRINT_BOTTOMLINE22:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT23
-  lda m22,x
+  lda m22_,x
   beq PRE_PRE_PRINT22
   jsr LCD_WRITE_LETTER
   inx
@@ -1830,7 +1830,7 @@ MESSAGES:
   m1012: .asciiz "took care of it!"
   m1013: .asciiz "Id give my right"
   m1014: .asciiz "arm to be       "
-  m1015: .asciiz " ambidextrous  "
+  m1015: .asciiz " ambidextrous   "
 
 
 
@@ -1930,7 +1930,7 @@ MESSAGES:
 
 
 
-  m16: .asciiz "There's a quote:"
+  m16_: .asciiz "There's a quote:"
   m162: .asciiz "say it.         "
   m163: .asciiz "hot steel skids "
   m164: .asciiz "on thin ice     "
@@ -2028,7 +2028,7 @@ MESSAGES:
   m21: .asciiz "Monkies go oh oh"
   m21_2: .asciiz "I go ah ah      "
   m21_3: .asciiz "Fruit snacks    "
-  m21_4: .asciiz "cure my munchie "
+  m21_4: .asciiz "cure my munchies"
   m21_5: .asciiz "I'm the DJ:     "
   m21_6: .asciiz "Disk Jockey     "
   m217: .asciiz "Hot dogs aren't "
