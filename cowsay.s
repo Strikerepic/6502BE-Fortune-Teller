@@ -15,7 +15,6 @@ reset:
   txs
   ldx #$00
   
-
   lda #%11111111 ; Data Direction for port b is now all output
   sta DATADIRB
 
@@ -1422,9 +1421,8 @@ PRE_PRINT22:
 
   MESSAGE_PRINT_TOPLINE22:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT22
   beq PRE_PRE_PRE_PRINT23
-  lda m22_,x
+  lda m22,x
   beq START_NEWLINE22
   jsr LCD_WRITE_LETTER
   inx
@@ -1438,10 +1436,8 @@ START_NEWLINE22:
 
 MESSAGE_PRINT_BOTTOMLINE22:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT22
-  lda m22_,x
   beq PRE_PRE_PRE_PRINT23
-  lda mm22_,x
+  lda m22,x
   beq PRE_PRE_PRINT22
   jsr LCD_WRITE_LETTER
   inx
@@ -1471,7 +1467,7 @@ PRE_PRINT23:
 
   MESSAGE_PRINT_TOPLINE23:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT23
+  beq PRE_PRE_PRE_PRINT24
   lda m23_,x
   beq START_NEWLINE23
   jsr LCD_WRITE_LETTER
@@ -1486,7 +1482,7 @@ START_NEWLINE23:
 
 MESSAGE_PRINT_BOTTOMLINE23:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT23
+  beq PRE_PRE_PRE_PRINT24
   lda m23_,x
   beq PRE_PRE_PRINT23
   jsr LCD_WRITE_LETTER
@@ -1499,17 +1495,57 @@ MESSAGE_PRINT_BOTTOMLINE23:
 
 
 
+
+
+
+PRE_PRE_PRE_PRINT24:
+  ldx #$00
+  jmp PRE_PRINT24
+
+PRE_PRE_PRINT24:
+  inx
+PRE_PRINT24:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE24:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT24
+  lda m24_,x
+  beq START_NEWLINE24
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE24
+
+
+START_NEWLINE24:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE24:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT24
+  lda m24_,x
+  beq PRE_PRE_PRINT24
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE24
+
+
+
+
+
+
+
+
+
+
+
+
   
 
-
-
-
-
-
-
-
-
- 
 
 
 
@@ -1996,9 +2032,6 @@ MESSAGES:
   m21_5: .asciiz "I'm the DJ:     "
   m21_6: .asciiz "Disk Jockey     "
   m217: .asciiz "Hot dogs aren't "
-  m21_5: .asciiz "I’m the DJ:     "
-  m21_6: .asciiz "Disk Jockey     "
-  m217: .asciiz "Hot dogs aren’t "
   m218: .asciiz "all for buns    "
   m219: .asciiz "I love to break "
   m2110: .asciiz "like glass      "
@@ -2045,6 +2078,26 @@ MESSAGES:
   m2313: .asciiz "Goodnight Dallas"
   m2314: .asciiz "Texas. Wherever "
   m2315: .asciiz "you are!        "
+
+
+
+
+  m24_: .asciiz "If you fail     "
+  m242: .asciiz "just don't.     "
+  m243: .asciiz "A Modem is just "
+  m244: .asciiz "an online home  "
+  m245: .asciiz "3-year-olds     "
+  m246: .asciiz "become adults   "
+  m247: .asciiz "7 Bullets 1 Mil "
+  m248: .asciiz "Each. $7,000,000"
+  m249: .asciiz "Squeegee only   "
+  m2410: .asciiz "Works with water"
+  m2411: .asciiz "The Tsar Dances "
+  m2412: .asciiz "wunderbar in EU "
+  m2413: .asciiz "Good ideas come "
+  m2414: .asciiz "When one milks a"
+  m2415: .asciiz "cow rapidly     "
+
 
 
 
