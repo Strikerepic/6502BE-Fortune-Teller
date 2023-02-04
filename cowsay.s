@@ -767,33 +767,7 @@ PRE_PRE_PRINT11:
   inx
 PRE_PRINT11:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
 
@@ -842,31 +816,7 @@ PRE_PRE_PRINT12:
   inx
 PRE_PRINT12:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -921,33 +871,7 @@ PRE_PRE_PRINT13:
   inx
 PRE_PRINT13:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
+  jsr PRE_PRINTSUB
 
 
 
@@ -994,33 +918,7 @@ PRE_PRE_PRINT14:
   inx
 PRE_PRINT14:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
+  jsr PRE_PRINTSUB
 
 
 
@@ -1064,37 +962,10 @@ PRE_PRE_PRINT15:
   inx
 PRE_PRINT15:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
-
-
-  MESSAGE_PRINT_TOPLINE15:
+MESSAGE_PRINT_TOPLINE15:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT16
   lda m15,x
@@ -1134,18 +1005,11 @@ PRE_PRE_PRINT16:
 PRE_PRINT16:
   nop
   jsr PRE_PRINTSUB
+
   
 
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
 
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
-
-
-
-
-  MESSAGE_PRINT_TOPLINE16:
+MESSAGE_PRINT_TOPLINE16:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT17
   lda m16_,x
@@ -1185,7 +1049,7 @@ PRE_PRINT17:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE17:
+MESSAGE_PRINT_TOPLINE17:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT18
   lda m17,x
@@ -1235,7 +1099,7 @@ PRE_PRINT18:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE18:
+MESSAGE_PRINT_TOPLINE18:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT19
   lda m18,x
@@ -1277,7 +1141,7 @@ PRE_PRINT19:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE19:
+MESSAGE_PRINT_TOPLINE19:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT20
   lda m19,x
@@ -1327,7 +1191,7 @@ PRE_PRINT20:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE20:
+MESSAGE_PRINT_TOPLINE20:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT21
   lda m20,x
@@ -1372,7 +1236,7 @@ PRE_PRINT21:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE21:
+MESSAGE_PRINT_TOPLINE21:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT22
   lda m21,x
@@ -1419,7 +1283,7 @@ PRE_PRINT22:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE22:
+MESSAGE_PRINT_TOPLINE22:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT23
   lda m22_,x
@@ -1465,7 +1329,7 @@ PRE_PRINT23:
   jsr PRE_PRINTSUB
 
 
-  MESSAGE_PRINT_TOPLINE23:
+MESSAGE_PRINT_TOPLINE23:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT24
   lda m23_,x
@@ -1532,6 +1396,315 @@ MESSAGE_PRINT_BOTTOMLINE24:
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE24
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT25:
+  ldx #$00
+  jmp PRE_PRINT25
+
+PRE_PRE_PRINT25:
+  inx
+PRE_PRINT25:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE25:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT26
+  lda m25_,x
+  beq START_NEWLINE25
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE25
+
+
+START_NEWLINE25:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE25:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT26
+  lda m25_,x
+  beq PRE_PRE_PRINT25
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE25
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT26:
+  ldx #$00
+  jmp PRE_PRINT26
+
+PRE_PRE_PRINT26:
+  inx
+PRE_PRINT26:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE26:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT27
+  lda m26_,x
+  beq START_NEWLINE26
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE26
+
+
+START_NEWLINE26:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE26:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT27
+  lda m26_,x
+  beq PRE_PRE_PRINT26
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE26
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT27:
+  ldx #$00
+  jmp PRE_PRINT27
+
+PRE_PRE_PRINT27:
+  inx
+PRE_PRINT27:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE27:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT28
+  lda m27_,x
+  beq START_NEWLINE27
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE27
+
+
+START_NEWLINE27:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE27:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT28
+  lda m27_,x
+  beq PRE_PRE_PRINT27
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE27
+
+
+  
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT28:
+  ldx #$00
+  jmp PRE_PRINT28
+
+PRE_PRE_PRINT28:
+  inx
+PRE_PRINT28:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE28:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT29
+  lda m28_,x
+  beq START_NEWLINE28
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE28
+
+
+START_NEWLINE28:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE28:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT29
+  lda m28_,x
+  beq PRE_PRE_PRINT28
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE28
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT29:
+  ldx #$00
+  jmp PRE_PRINT29
+
+PRE_PRE_PRINT29:
+  inx
+PRE_PRINT29:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE29:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT30
+  lda m29_,x
+  beq START_NEWLINE29
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE29
+
+
+START_NEWLINE29:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE29:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT30
+  lda m29_,x
+  beq PRE_PRE_PRINT29
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE29
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT30:
+  ldx #$00
+  jmp PRE_PRINT30
+
+PRE_PRE_PRINT30:
+  inx
+PRE_PRINT30:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE30:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT31
+  lda m30_,x
+  beq START_NEWLINE30
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE30
+
+
+START_NEWLINE30:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE30:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT31
+  lda m30_,x
+  beq PRE_PRE_PRINT30
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE30
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT31:
+  ldx #$00
+  jmp PRE_PRINT31
+
+PRE_PRE_PRINT31:
+  inx
+PRE_PRINT31:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE31:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT32
+  lda m31_,x
+  beq START_NEWLINE31
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE31
+
+
+START_NEWLINE31:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE31:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT32
+  lda m31_,x
+  beq PRE_PRE_PRINT31
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE31
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -1951,7 +2124,7 @@ MESSAGES:
 
   m17: .asciiz "No Shirt, No    "
   m172: .asciiz "shoes. Service! "
-  m173: .asciiz "Dwarves Mine,  "
+  m173: .asciiz "Dwarves Mine,   "
   m174: .asciiz "Elves Cast      "
   m175: .asciiz "To see curve the"
   m176: .asciiz "glass carefully "
@@ -2090,13 +2263,167 @@ MESSAGES:
   m246: .asciiz "become adults   "
   m247: .asciiz "7 Bullets 1 Mil "
   m248: .asciiz "Each. $7,000,000"
-  m249: .asciiz "Squeegee only   "
-  m2410: .asciiz "Works with water"
+  m249: .asciiz "Squeegees only  "
+  m2410: .asciiz "work with water "
   m2411: .asciiz "The Tsar Dances "
-  m2412: .asciiz "wunderbar in EU "
+  m2412: .asciiz "wunderbar       "
   m2413: .asciiz "Good ideas come "
   m2414: .asciiz "When one milks a"
-  m2415: .asciiz "cow rapidly     "
+  m2415: .asciiz "cow rapidly.    "
+
+
+
+
+  m25_: .asciiz "If you fail     "
+  m252: .asciiz "just don't.     "
+  m253: .asciiz "If it's a just  "
+  m254: .asciiz "tile. You reveal"
+  m255: .asciiz "Displaying #    "
+  m256: .asciiz "9363347321154566"
+  m257: .asciiz "Total Gaming != "
+  m258: .asciiz "Hours living    "
+  m259: .asciiz "Don't just swiss"
+  m2510: .asciiz "cheese it man   "
+  m2511: .asciiz "Get em up here  "
+  m2512: .asciiz "don't hesitate  "
+  m2513: .asciiz "Wait a second..."
+  m2514: .asciiz "this one looks  "
+  m2515: .asciiz "very familiar   "
+
+
+
+
+  m26_: .asciiz "Your second wind"
+  m262: .asciiz "starts too late "
+  m263: .asciiz "A grave period  "
+  m264: .asciiz "begins for you  "
+  m265: .asciiz "Avoid gunfire in"
+  m266: .asciiz "restrooms today "
+  m267: .asciiz "Low flying      "
+  m268: .asciiz "butterflies near"
+  m269: .asciiz "Basically just  "
+  m2610: .asciiz "space domination"
+  m2611: .asciiz "Just rewrite the"
+  m2612: .asciiz "whole story now "
+  m2613: .asciiz "I get hands-on. "
+  m2614: .asciiz "This means your "
+  m2615: .asciiz "face is now off."
+
+
+
+
+  m27_: .asciiz "World War with  "
+  m272: .asciiz "no technology   "
+  m273: .asciiz "Dwayne 'theRock'"
+  m274: .asciiz "has a boulder   "
+  m275: .asciiz "Fruit Snacks    "
+  m276: .asciiz "squished by shoe"
+  m277: .asciiz "Say something:  "
+  m278: .asciiz "like what do you"
+  m279: .asciiz "Wait! You want  "
+  m2710: .asciiz "the whole EEPROM"
+  m2711: .asciiz "Short people    "
+  m2712: .asciiz "reach for toes. "
+  m2713: .asciiz "   Hood   Up,   "
+  m2714: .asciiz "  Airpods  in,  "
+  m2715: .asciiz " Middle School  "
+
+
+
+
+  m28_: .asciiz "Bouta eat the   "
+  m282: .asciiz "whole Cheeto bag"
+  m283: .asciiz "Life's music    "
+  m284: .asciiz "has no rhythm   "
+  m285: .asciiz "Goofy walk with "
+  m286: .asciiz "the snazzy shoes"
+  m287: .asciiz "Break glass when"
+  m288: .asciiz "host isn't funny"
+  m289: .asciiz "A man has fallen"
+  m2810: .asciiz "into the river "
+  m2811: .asciiz "1v1 me in       "
+  m2812: .asciiz "connect 4 bruv  "
+  m2813: .asciiz "Now that there  "
+  m2814: .asciiz "is a serious    "
+  m2815: .asciiz "    BLUNDER!    "
+
+
+
+
+  m29_: .asciiz "ssssssssssssssss"
+  m292: .asciiz "I'm a snake. sss"
+  m293: .asciiz "Tic-Tac-Toe-Tic "
+  m294: .asciiz "Tac-Toe = 2T-T-T"
+  m295: .asciiz "Oh look a penny "
+  m296: .asciiz "is it heads up? "
+  m297: .asciiz "What color is   "
+  m298: .asciiz "your jail cell? "
+  m299: .asciiz "What am I if not"
+  m2910: .asciiz "A blood ballon  "
+  m2911: .asciiz "You look like   "
+  m2912: .asciiz "wallpaper tastes"
+  m2913: .asciiz "   Bears Bite!  "
+  m2914: .asciiz "   Rouges kite  "
+  m2915: .asciiz "  I hurt people "
+
+
+
+
+  m29_: .asciiz "TikTok girls    "
+  m292: .asciiz "scare Putin.    "
+  m293: .asciiz "Lo-Fi beats on  "
+  m294: .asciiz "Hi-Fi streets.  "
+  m295: .asciiz "No more water   "
+  m296: .asciiz "deemed too moist"
+  m297: .asciiz "Philanthropists "
+  m298: .asciiz "donate often    "
+  m299: .asciiz "404-Error:      "
+  m2910: .asciiz "Words Not Found "
+  m2911: .asciiz "I hear what I   "
+  m2912: .asciiz "say, don't play "
+  m2913: .asciiz "Beer and Pretzel"
+  m2914: .asciiz "The breakfast of"
+  m2915: .asciiz "   Champions!   "
+
+
+
+
+
+  m30_: .asciiz "What is the dog "
+  m302: .asciiz "without doing?  "
+  m303: .asciiz "Fusion v Fission"
+  m304: .asciiz "bomb either way "
+  m305: .asciiz "Am I the danger "
+  m306: .asciiz "or are you?     "
+  m307: .asciiz "Are you mentally"
+  m308: .asciiz "here at Dominos?"
+  m309: .asciiz "OBAMNA: ________"
+  m3010: .asciiz "SODAAAA!!!!!    "
+  m3011: .asciiz "Beans in the    "
+  m3012: .asciiz "cake: Bri'ish   "
+  m3013: .asciiz "I WOKE UP IN    "
+  m3014: .asciiz "STEAMIN MOOD    "
+  m3015: .asciiz "TODAY YEAH      "
+
+
+
+
+  m31_: .asciiz "Why do you know "
+  m312_: .asciiz "where to roof is"
+  m313_: .asciiz "Getting into a  "
+  m314_: .asciiz "pickle sucks!   "
+  m315_: .asciiz "Zaro Bugs here! "
+  m316: .asciiz "But zever nero! "
+  m317: .asciiz "We deem you a   "
+  m318: .asciiz "low priority    "
+  m319: .asciiz "I feel better   "
+  m3110: .asciiz "about my problem"
+  m3111: .asciiz "I have MANY:    "
+  m3112: .asciiz "CHARTS AND DATA "
+  m3113: .asciiz "  Sassy is NOT  "
+  m3114: .asciiz "  -_-Always-_-  "
+  m3115: .asciiz "  ...Classy...  "
+
 
 
 
