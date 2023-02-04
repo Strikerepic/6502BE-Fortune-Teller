@@ -1704,6 +1704,49 @@ MESSAGE_PRINT_BOTTOMLINE31:
 
 
 
+PRE_PRE_PRE_PRINT32:
+  ldx #$00
+  jmp PRE_PRINT32
+
+PRE_PRE_PRINT32:
+  inx
+PRE_PRINT32:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE32:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT32
+  lda m32_,x
+  beq START_NEWLINE32
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE32
+
+
+START_NEWLINE32:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE32:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT32
+  lda m32_,x
+  beq PRE_PRE_PRINT32
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE32
+
+
+
+
+
+
+
+
+
   
 
 
@@ -2369,26 +2412,6 @@ MESSAGES:
 
 
 
-  m29_: .asciiz "TikTok girls    "
-  m292: .asciiz "scare Putin.    "
-  m293: .asciiz "Lo-Fi beats on  "
-  m294: .asciiz "Hi-Fi streets.  "
-  m295: .asciiz "No more water   "
-  m296: .asciiz "deemed too moist"
-  m297: .asciiz "Philanthropists "
-  m298: .asciiz "donate often    "
-  m299: .asciiz "404-Error:      "
-  m2910: .asciiz "Words Not Found "
-  m2911: .asciiz "I hear what I   "
-  m2912: .asciiz "say, don't play "
-  m2913: .asciiz "Beer and Pretzel"
-  m2914: .asciiz "The breakfast of"
-  m2915: .asciiz "   Champions!   "
-
-
-
-
-
   m30_: .asciiz "What is the dog "
   m302: .asciiz "without doing?  "
   m303: .asciiz "Fusion v Fission"
@@ -2427,6 +2450,25 @@ MESSAGES:
 
 
 
+  m32_: .asciiz "TikTok girls    "
+  m322: .asciiz "scare Putin.    "
+  m323: .asciiz "Lo-Fi beats on  "
+  m324: .asciiz "Hi-Fi streets.  "
+  m325: .asciiz "No more water   "
+  m326: .asciiz "deemed too moist"
+  m327: .asciiz "Philanthropists "
+  m328: .asciiz "donate often    "
+  m329: .asciiz "404-Error:      "
+  m3210: .asciiz "Words Not Found "
+  m3211: .asciiz "I hear what I   "
+  m3212: .asciiz "say, don't play "
+  m3213: .asciiz "Beer and Pretzel"
+  m3214: .asciiz "The breakfast of"
+  m3215: .asciiz "   Champions!   "
+
+
+
+
 
 
 
@@ -2446,6 +2488,8 @@ MESSAGES:
 
 
   
+
+
 
 
 
