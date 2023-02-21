@@ -1717,7 +1717,7 @@ PRE_PRINT32:
 
 MESSAGE_PRINT_TOPLINE32:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT32
+  beq PRE_PRE_PRE_PRINT33
   lda m32_,x
   beq START_NEWLINE32
   jsr LCD_WRITE_LETTER
@@ -1732,12 +1732,309 @@ START_NEWLINE32:
 
 MESSAGE_PRINT_BOTTOMLINE32:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT32
+  beq PRE_PRE_PRE_PRINT33
   lda m32_,x
   beq PRE_PRE_PRINT32
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE32
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT33:
+  ldx #$00
+  jmp PRE_PRINT33
+
+PRE_PRE_PRINT33:
+  inx
+PRE_PRINT33:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE33:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT34
+  lda m33_,x
+  beq START_NEWLINE33
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE33
+
+
+START_NEWLINE33:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE33:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT34
+  lda m33_,x
+  beq PRE_PRE_PRINT33
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE33
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT34:
+  ldx #$00
+  jmp PRE_PRINT34
+
+PRE_PRE_PRINT34:
+  inx
+PRE_PRINT34:
+  nop
+  jsr PRE_PRINTSUB
+
+
+MESSAGE_PRINT_TOPLINE34:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT35
+  lda m34_,x
+  beq START_NEWLINE34
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE34
+
+
+START_NEWLINE34:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE34:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT35
+  lda m34_,x
+  beq PRE_PRE_PRINT34
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE34
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT35:
+  ldx #$00
+  jmp PRE_PRINT35
+
+PRE_PRE_PRINT35:
+  inx
+PRE_PRINT35:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+MESSAGE_PRINT_TOPLINE35:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT36
+  lda m35_,x
+  beq START_NEWLINE35
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE35
+
+
+START_NEWLINE35:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE35:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT36
+  lda m35_,x
+  beq PRE_PRE_PRINT35
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE35
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT36:
+  ldx #$00
+  jmp PRE_PRINT36
+
+PRE_PRE_PRINT36:
+  inx
+PRE_PRINT36:
+  nop
+  jsr PRE_PRINTSUB
+
+
+  MESSAGE_PRINT_TOPLINE36:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT37
+  lda m36_,x
+  beq START_NEWLINE36
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE36
+
+
+START_NEWLINE36:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE36:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT36
+  lda m36_,x
+  beq PRE_PRE_PRINT36
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE36
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT37:
+  ldx #$00
+  jmp PRE_PRINT37
+
+PRE_PRE_PRINT37:
+  inx
+PRE_PRINT37:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE37:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT38
+  lda m37_,x
+  beq START_NEWLINE37
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE37
+
+
+START_NEWLINE37:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE37:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT38
+  lda m37_,x
+  beq PRE_PRE_PRINT37
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE37
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT38:
+  ldx #$00
+  jmp PRE_PRINT38
+
+PRE_PRE_PRINT38:
+  inx
+PRE_PRINT38:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE38:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT39
+  lda m38_,x
+  beq START_NEWLINE38
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE38
+
+
+START_NEWLINE38:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE38:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT39
+  lda m38_,x
+  beq PRE_PRE_PRINT38
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE38
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT39:
+  ldx #$00
+  jmp PRE_PRINT39
+
+PRE_PRE_PRINT39:
+  inx
+PRE_PRINT39:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE39:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT40
+  lda m39_,x
+  beq START_NEWLINE39
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE39
+
+
+START_NEWLINE39:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE39:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT40
+  lda m39_,x
+  beq PRE_PRE_PRINT39
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE39
+
+
 
 
 
@@ -2465,6 +2762,159 @@ MESSAGES:
   m3213: .asciiz "Beer and Pretzel"
   m3214: .asciiz "The breakfast of"
   m3215: .asciiz "   Champions!   "
+
+
+
+
+    m33_: .asciiz "Your tastes are "
+  m332: .asciiz "quite viable    "
+  m333: .asciiz "You'll Be framed"
+  m334: .asciiz "with murder     "
+  m335: .asciiz "Please, Please! "
+  m336: .asciiz "who is a vector "
+  m337: .asciiz "6th Graders will"
+  m338: .asciiz "not enter my lab"
+  m339: .asciiz "Explain the code"
+  m3310: .asciiz "but dont show it"
+  m3311: .asciiz "Walk me through "
+  m3312: .asciiz "why this works  "
+  m3313: .asciiz "Why does reality"
+  m3314: .asciiz "   feel all so  "
+  m3315: .asciiz "   Unnecessary  "
+
+
+
+
+  m34_: .asciiz "Ya Know they    "
+  m342: .asciiz "look very alike "
+  m343: .asciiz "This man slowly "
+  m344: .asciiz "loses his mind  "
+  m345: .asciiz "I saw that guy  "
+  m346: .asciiz "with hair & eyes"
+  m347: .asciiz "I hope you smile"
+  m348: .asciiz "just kidding :( "
+  m349: .asciiz "What the oh! Dog"
+  m3410: .asciiz "with da butter  "
+  m3411: .asciiz "Not knowledgable"
+  m3412: .asciiz "be smarter less "
+  m3413: .asciiz "My messages will"
+  m3414: .asciiz "never get to the"
+  m3415: .asciiz "sender. IGNORED "
+
+
+
+
+  m35_: .asciiz "Let's have a    "
+  m352: .asciiz "serious talk ya?"
+  m353: .asciiz "This has made me"
+  m354: .asciiz "deeply upset    "
+  m355: .asciiz "10 minutes is a "
+  m356: .asciiz "long time for me"
+  m357: .asciiz "Slow. Sloopy.   "
+  m358: .asciiz "Uncoordinated.  "
+  m359: .asciiz "There was a     "
+  m3510: .asciiz "connection. Pain"
+  m3511: .asciiz "Only time will  "
+  m3512: .asciiz "tell. Delay it. "
+  m3513: .asciiz "What's Poppin   "
+  m3514: .asciiz "its ya boy 6502 "
+  m3515: .asciiz "Microprocessor  "
+
+
+
+
+  m36_: .asciiz "You can't lick  "
+  m362: .asciiz "your lips and   "
+  m363: .asciiz "Just stare at me"
+  m364: .asciiz "STOP LOOKIN'    "
+  m365: .asciiz "Deal to show its"
+  m366: .asciiz "the status quo  "
+  m367: .asciiz "ICE Brings the  "
+  m368: .asciiz "heat. Flee!     "
+  m369: .asciiz "How valuable is "
+  m3610: .asciiz "your pinky?     "
+  m3611: .asciiz "Just a short    "
+  m3612: .asciiz "trial. Nothing +"
+  m3613: .asciiz "BRUUUHHHH! I    "
+  m3614: .asciiz "even bought girl"
+  m3615: .asciiz "scout cookies!  "
+
+
+
+
+  m37_: .asciiz "Plutonium is my "
+  m372: .asciiz "candy of choice "
+  m373: .asciiz "This pic goes   "
+  m374: .asciiz "dummy hard tho  "
+  m375: .asciiz "Amicus Curiae   "
+  m376: .asciiz "for the soup    "
+  m377: .asciiz "2 years in jail "
+  m378: .asciiz "2 years of fun! "
+  m379: .asciiz "The conundrum is"
+  m3710: .asciiz "pictured below  "
+  m3711: .asciiz "IM BOUT TO BREW "
+  m3712: .asciiz "A HOT STEW      "
+  m3713: .asciiz "Even the capitan"
+  m3714: .asciiz "of winter wears "
+  m3715: .asciiz "long socks.     "
+
+
+
+
+  m38_: .asciiz "Plutonium is my "
+  m382: .asciiz "candy of choice "
+  m383: .asciiz "This pic goes   "
+  m384: .asciiz "dummy hard tho  "
+  m385: .asciiz "     Racialy    "
+  m386: .asciiz "Motivated !=14th"
+  m387: .asciiz "Self driving car"
+  m388: .asciiz "kills jaywalkers"
+  m389: .asciiz "Make un cube    "
+  m3810: .asciiz "vatch it bounce!"
+  m3811: .asciiz "This potion make"
+  m3812: .asciiz "A da big booty  "
+  m3813: .asciiz "Italian Plumbers"
+  m3814: .asciiz "Mario Brothers  "
+  m3815: .asciiz "Kill a turtle   "
+
+
+
+
+  m38_: .asciiz "Gamers don't    "
+  m382: .asciiz "play with love  "
+  m383: .asciiz "PvZ jazz music  "
+  m384: .asciiz "got me bopin'   "
+  m385: .asciiz "All for one and "
+  m386: .asciiz "one for all!    "
+  m387: .asciiz "as you sow, so  "
+  m388: .asciiz "shall you reap  "
+  m389: .asciiz "I like the way  "
+  m3810: .asciiz "you're thinking"
+  m3811: .asciiz "This trojan is "
+  m3812: .asciiz "painless       "
+  m3813: .asciiz "    Always     "
+  m3814: .asciiz "      Be       "
+  m3815: .asciiz "   Prepared    "
+
+
+
+
+  m39_: .asciiz "You are as      "
+  m392: .asciiz "meticulous as I "
+  m393: .asciiz "I will keep you "
+  m394: .asciiz "in the fight    "
+  m395: .asciiz "I'll be waiting "
+  m396: .asciiz "for you         "
+  m397: .asciiz "Sometimes the   "
+  m398: .asciiz "direct route    "
+  m399: .asciiz "lacks finnese   "
+  m3910: .asciiz "yet is still   "
+  m3911: .asciiz "remarkably     "
+  m3912: .asciiz "effective      "
+  m3913: .asciiz "This heist will"
+  m3914: .asciiz "Require through"
+  m3915: .asciiz "Preperation... "
+
 
 
 
