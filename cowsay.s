@@ -2356,7 +2356,7 @@ PRE_PRINT47:
 
   MESSAGE_PRINT_TOPLINE47:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT47
+  beq PRE_PRE_PRE_PRINT48
   lda m47_,x
   beq START_NEWLINE47
   jsr LCD_WRITE_LETTER
@@ -2371,12 +2371,53 @@ START_NEWLINE47:
 
 MESSAGE_PRINT_BOTTOMLINE47:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT47
+  beq PRE_PRE_PRE_PRINT48
   lda m47_,x
   beq PRE_PRE_PRINT47
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE47
+
+
+
+
+
+PRE_PRE_PRE_PRINT48:
+  ldx #$00
+  jmp PRE_PRINT48
+
+PRE_PRE_PRINT48:
+  inx
+PRE_PRINT48:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE48:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT48
+  lda m48_,x
+  beq START_NEWLINE47
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE48
+
+
+START_NEWLINE48:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE48:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT48
+  lda m48_,x
+  beq PRE_PRE_PRINT48
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE48
+
 
 
 
@@ -3391,6 +3432,25 @@ MESSAGES:
   m4713: .asciiz "a pencil eraser "
   m4714: .asciiz "doesn't work    "
   m4715: .asciiz "on blood        "
+
+
+
+
+  m48_: .asciiz "In a COD Lobby? "
+  m482: .asciiz "cover your ears "
+  m483: .asciiz "XBOX or PS      "
+  m484: .asciiz "Switch for me   "
+  m485: .asciiz "Robtics laptops "
+  m486: .asciiz "you can see it  "
+  m487: .asciiz "Wi-Fi network is"
+  m488: .asciiz "not secure      "
+  m489: .asciiz "Ya can't catch  "
+  m4810: .asciiz "Ya boyo goyo    "
+  m4811: .asciiz "No standing to  "
+  m4812: .asciiz "sue, just due   "
+  m4813: .asciiz "Bumbers are 100%"
+  m4814: .asciiz "Yeah, I checked "
+  m4815: .asciiz "they were good  "
 
 
 
