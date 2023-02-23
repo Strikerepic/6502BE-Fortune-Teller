@@ -1901,7 +1901,7 @@ START_NEWLINE36:
 
 MESSAGE_PRINT_BOTTOMLINE36:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT36
+  beq PRE_PRE_PRE_PRINT37
   lda m36_,x
   beq PRE_PRE_PRINT36
   jsr LCD_WRITE_LETTER
@@ -2033,6 +2033,131 @@ MESSAGE_PRINT_BOTTOMLINE39:
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE39
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT40:
+  ldx #$00
+  jmp PRE_PRINT40
+
+PRE_PRE_PRINT40:
+  inx
+PRE_PRINT40:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE40:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT41
+  lda m40_,x
+  beq START_NEWLINE40
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE40
+
+
+START_NEWLINE40:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE40:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT41
+  lda m40_,x
+  beq PRE_PRE_PRINT40
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE40
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT41:
+  ldx #$00
+  jmp PRE_PRINT41
+
+PRE_PRE_PRINT41:
+  inx
+PRE_PRINT41:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE41:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT42
+  lda m41_,x
+  beq START_NEWLINE41
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE41
+
+
+START_NEWLINE41:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE41:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT42
+  lda m41_,x
+  beq PRE_PRE_PRINT41
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE41
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT42:
+  ldx #$00
+  jmp PRE_PRINT42
+
+PRE_PRE_PRINT42:
+  inx
+PRE_PRINT42:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE42:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT42
+  lda m42_,x
+  beq START_NEWLINE42
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE42
+
+
+START_NEWLINE42:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE42:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT42
+  lda m42_,x
+  beq PRE_PRE_PRINT42
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE42
 
 
 
@@ -2751,7 +2876,7 @@ MESSAGES:
   m322: .asciiz "scare Putin.    "
   m323: .asciiz "Lo-Fi beats on  "
   m324: .asciiz "Hi-Fi streets.  "
-  m325: .asciiz "No more water   "
+  m325: .asciiz "No more water.  "
   m326: .asciiz "deemed too moist"
   m327: .asciiz "Philanthropists "
   m328: .asciiz "donate often    "
@@ -2766,7 +2891,7 @@ MESSAGES:
 
 
 
-    m33_: .asciiz "Your tastes are "
+  m33_: .asciiz "Your tastes are "
   m332: .asciiz "quite viable    "
   m333: .asciiz "You'll Be framed"
   m334: .asciiz "with murder     "
@@ -2797,7 +2922,7 @@ MESSAGES:
   m3410: .asciiz "with da butter  "
   m3411: .asciiz "Not knowledgable"
   m3412: .asciiz "be smarter less "
-  m3413: .asciiz "My messages will"
+  m3413: .asciiz "My messages     "
   m3414: .asciiz "never get to the"
   m3415: .asciiz "sender. IGNORED "
 
@@ -2861,10 +2986,10 @@ MESSAGES:
 
 
 
-  m38_: .asciiz "Plutonium is my "
-  m382: .asciiz "candy of choice "
-  m383: .asciiz "This pic goes   "
-  m384: .asciiz "dummy hard tho  "
+  m38_: .asciiz "Toxic waste     "
+  m382: .asciiz "flows like water"
+  m383: .asciiz "Kerosene burns  "
+  m384: .asciiz "the evidence    )"
   m385: .asciiz "     Racialy    "
   m386: .asciiz "Motivated !=14th"
   m387: .asciiz "Self driving car"
@@ -2876,25 +3001,6 @@ MESSAGES:
   m3813: .asciiz "Italian Plumbers"
   m3814: .asciiz "Mario Brothers  "
   m3815: .asciiz "Kill a turtle   "
-
-
-
-
-  m38_: .asciiz "Gamers don't    "
-  m382: .asciiz "play with love  "
-  m383: .asciiz "PvZ jazz music  "
-  m384: .asciiz "got me bopin'   "
-  m385: .asciiz "All for one and "
-  m386: .asciiz "one for all!    "
-  m387: .asciiz "as you sow, so  "
-  m388: .asciiz "shall you reap  "
-  m389: .asciiz "I like the way  "
-  m3810: .asciiz "you're thinking"
-  m3811: .asciiz "This trojan is "
-  m3812: .asciiz "painless       "
-  m3813: .asciiz "    Always     "
-  m3814: .asciiz "      Be       "
-  m3815: .asciiz "   Prepared    "
 
 
 
@@ -2914,6 +3020,63 @@ MESSAGES:
   m3913: .asciiz "This heist will"
   m3914: .asciiz "Require through"
   m3915: .asciiz "Preperation... "
+
+
+
+
+  m40_: .asciiz "Gamers don't    "
+  m402: .asciiz "play with love  "
+  m403: .asciiz "PvZ jazz music  "
+  m404: .asciiz "got me bopin'   "
+  m405: .asciiz "All for one and "
+  m406: .asciiz "one for all!    "
+  m407: .asciiz "as you sow, so  "
+  m408: .asciiz "shall you reap  "
+  m409: .asciiz "I like the way  "
+  m4010: .asciiz "you're thinking "
+  m4011: .asciiz "This trojan is  "
+  m4012: .asciiz "painless        "
+  m4013: .asciiz "    Always      "
+  m4014: .asciiz "      Be        "
+  m4015: .asciiz "   Prepared     "
+
+
+
+
+  m41_: .asciiz "Working for the "
+  m412_: .asciiz "FBI backfires   "
+  m413_: .asciiz "Bootlegging     "
+  m414_: .asciiz "Boozer right by "
+  m415_: .asciiz "My temperature  "
+  m416: .asciiz "rised. Fans?    "
+  m417: .asciiz "The sly fox     "
+  m418: .asciiz "laughs violently"
+  m419: .asciiz "I get up and    "
+  m4110: .asciiz "close my eyes  "
+  m4111: .asciiz "I am sitting in"
+  m4112: .asciiz "the morning at "
+  m4113: .asciiz "the diner on   "
+  m4114: .asciiz "the corner I am"
+  m4115: .asciiz "waiting at the "
+
+
+
+
+  m42_: .asciiz "Looking Backward"
+  m422: .asciiz "Explosion loud  "
+  m423: .asciiz "Minimum wage up "
+  m424: .asciiz "Max wage down to"
+  m425: .asciiz "Cook food quick "
+  m426: .asciiz "but its cold    "
+  m427: .asciiz "Kale ends more  "
+  m428: .asciiz "diets than McDs "
+  m429: .asciiz "I've been to    "
+  m4210: .asciiz "your house. Its"
+  m4211: .asciiz "Remember have a"
+  m4212: .asciiz "six flags day! "
+  m4213: .asciiz "I'm faster than"
+  m4214: .asciiz "electron drift "
+  m4215: .asciiz "speed! (1 mm/s)"
 
 
 
