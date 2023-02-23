@@ -2137,7 +2137,7 @@ PRE_PRINT42:
 
   MESSAGE_PRINT_TOPLINE42:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT42
+  beq PRE_PRE_PRE_PRINT43
   lda m42_,x
   beq START_NEWLINE42
   jsr LCD_WRITE_LETTER
@@ -2152,12 +2152,231 @@ START_NEWLINE42:
 
 MESSAGE_PRINT_BOTTOMLINE42:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT42
+  beq PRE_PRE_PRE_PRINT43
   lda m42_,x
   beq PRE_PRE_PRINT42
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE42
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT43:
+  ldx #$00
+  jmp PRE_PRINT43
+
+PRE_PRE_PRINT43:
+  inx
+PRE_PRINT43:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE43:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT44
+  lda m43_,x
+  beq START_NEWLINE43
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE43
+
+
+START_NEWLINE43:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE43:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT44
+  lda m43_,x
+  beq PRE_PRE_PRINT43
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE43
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT44:
+  ldx #$00
+  jmp PRE_PRINT44
+
+PRE_PRE_PRINT44:
+  inx
+PRE_PRINT44:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE44:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT45
+  lda m44_,x
+  beq START_NEWLINE44
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE44
+
+
+START_NEWLINE44:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE44:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT45
+  lda m44_,x
+  beq PRE_PRE_PRINT44
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE44
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT45:
+  ldx #$00
+  jmp PRE_PRINT45
+
+PRE_PRE_PRINT45:
+  inx
+PRE_PRINT45:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE45:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT46
+  lda m45_,x
+  beq START_NEWLINE45
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE45
+
+
+START_NEWLINE45:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE45:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT46
+  lda m45_,x
+  beq PRE_PRE_PRINT45
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE45
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT46:
+  ldx #$00
+  jmp PRE_PRINT46
+
+PRE_PRE_PRINT46:
+  inx
+PRE_PRINT46:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE46:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT47
+  lda m46_,x
+  beq START_NEWLINE46
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE46
+
+
+START_NEWLINE46:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE46:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT47
+  lda m46_,x
+  beq PRE_PRE_PRINT46
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE46
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT47:
+  ldx #$00
+  jmp PRE_PRINT47
+
+PRE_PRE_PRINT47:
+  inx
+PRE_PRINT47:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE47:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT47
+  lda m47_,x
+  beq START_NEWLINE47
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE47
+
+
+START_NEWLINE47:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE47:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT47
+  lda m47_,x
+  beq PRE_PRE_PRINT47
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE47
 
 
 
@@ -3077,6 +3296,102 @@ MESSAGES:
   m4213: .asciiz "I'm faster than"
   m4214: .asciiz "electron drift "
   m4215: .asciiz "speed! (1 mm/s)"
+
+
+
+
+  m43_: .asciiz "The papers burn "
+  m432: .asciiz "the crimes rise "
+  m433: .asciiz "A fun game for  "
+  m434: .asciiz "VR: Real Life   "
+  m435: .asciiz "Roller Coasters "
+  m436: .asciiz "and deregulation"
+  m437: .asciiz "Ronald Regan and"
+  m438: .asciiz "a rising deficit"
+  m439: .asciiz "Enron loves your"
+  m4310: .asciiz "Books. Cooked.  "
+  m4311: .asciiz "The SEC hates   "
+  m4312: .asciiz "burned books too"
+  m4313: .asciiz "Sleeping next to"
+  m4314: .asciiz "a ladder? Does  "
+  m4315: .asciiz "your head hurt  "
+
+
+
+
+  m44_: .asciiz "Chocolate chips "
+  m442: .asciiz "are a facade    "
+  m443: .asciiz "Drink heavily   "
+  m444: .asciiz "no keys in reach"
+  m445: .asciiz "The rubber      "
+  m446: .asciiz "industry is fire"
+  m447: .asciiz "A pen with no   "
+  m448: .asciiz "ink has no use  "
+  m449: .asciiz "Yesterday I was "
+  m4410: .asciiz "doin my car.Wait"
+  m4411: .asciiz "It was a total  "
+  m4412: .asciiz "pain. I won tho "
+  m4413: .asciiz "Chess is ping-  "
+  m4414: .asciiz "pong- if it was "
+  m4415: .asciiz "checkers        "
+
+
+
+
+  m45_: .asciiz "Just dunk on the"
+  m452: .asciiz "substitute judge"
+  m453: .asciiz "Just don't do it"
+  m454: .asciiz "-Me to the IRS  "
+  m455: .asciiz "Why do you turn "
+  m456: .asciiz "off your phone? "
+  m457: .asciiz "Why do people   "
+  m458: .asciiz "take selfies.   "
+  m459: .asciiz "If a snowman    "
+  m4510: .asciiz "melts its water "
+  m4511: .asciiz "If dragons dont "
+  m4512: .asciiz "exist, then who "
+  m4513: .asciiz "Imagine if there"
+  m4514: .asciiz "were shoe people"
+  m4515: .asciiz "would they stink"
+
+
+
+
+  m46_: .asciiz "Every day you   "
+  m462: .asciiz "eat food        "
+  m463: .asciiz "Mouse V Mouse   "
+  m464: .asciiz "computer v cheze"
+  m465: .asciiz "Cyberbullied?   "
+  m466: .asciiz "No more Wi-Fi   "
+  m467: .asciiz "Why do old      "
+  m468: .asciiz "people shrink   "
+  m469: .asciiz "My calc textbook"
+  m4610: .asciiz "stops bullets   "
+  m4611: .asciiz "Life is not like"
+  m4612: .asciiz "chocolate       "
+  m4613: .asciiz "Throwing axe and"
+  m4614: .asciiz "the tax man     "
+  m4615: .asciiz "crime either way"
+
+
+
+
+  m47_: .asciiz "To scared to    "
+  m472: .asciiz "Jump? Then do it"
+  m473: .asciiz "You guys know   "
+  m474: .asciiz "Scotland. Wow   "
+  m475: .asciiz "I pull up at the"
+  m476: .asciiz "afterparty.     "
+  m477: .asciiz "Running nose.   "
+  m478: .asciiz "leaking nose too"
+  m479: .asciiz "    Capybara    "
+  m4710: .asciiz "                "
+  m4711: .asciiz "Glass is clear  "
+  m4712: .asciiz "Brass is not    "
+  m4713: .asciiz "a pencil eraser "
+  m4714: .asciiz "doesn't work    "
+  m4715: .asciiz "on blood        "
+
 
 
 
