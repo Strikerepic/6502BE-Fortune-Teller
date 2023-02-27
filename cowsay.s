@@ -2396,9 +2396,9 @@ PRE_PRINT48:
 
   MESSAGE_PRINT_TOPLINE48:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT48
+  beq PRE_PRE_PRE_PRINT49
   lda m48_,x
-  beq START_NEWLINE47
+  beq START_NEWLINE48
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_TOPLINE48
@@ -2411,12 +2411,59 @@ START_NEWLINE48:
 
 MESSAGE_PRINT_BOTTOMLINE48:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT48
+  beq PRE_PRE_PRE_PRINT49
   lda m48_,x
   beq PRE_PRE_PRINT48
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE48
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT49:
+  ldx #$00
+  jmp PRE_PRINT49
+
+PRE_PRE_PRINT49:
+  inx
+PRE_PRINT49:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE49:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT49
+  lda m49_,x
+  beq START_NEWLINE49
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE49
+
+
+START_NEWLINE49:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE49:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT49
+  lda m49_,x
+  beq PRE_PRE_PRINT49
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE49
+
 
 
 
@@ -2454,6 +2501,46 @@ MESSAGE_PRINT_BOTTOMLINE48:
 
 
 PRE_PRINTSUB:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
   nop
   nop
   nop
@@ -3451,6 +3538,26 @@ MESSAGES:
   m4813: .asciiz "Bumbers are 100%"
   m4814: .asciiz "Yeah, I checked "
   m4815: .asciiz "they were good  "
+
+
+
+
+
+  m49_: .asciiz "The darkness    "
+  m492: .asciiz "I know it well  "
+  m493: .asciiz "Have the lambs  "
+  m494: .asciiz "stopped screamin"
+  m495: .asciiz "    You're no   "
+  m496: .asciiz "     messiah    "
+  m497: .asciiz "I feel right at "
+  m498: .asciiz "home: psych ward"
+  m499: .asciiz "I don't do this "
+  m4910: .asciiz "often but, can "
+  m4911: .asciiz "Your eyes stay "
+  m4912: .asciiz "closed for now "
+  m4913: .asciiz "I'm having an   "
+  m4914: .asciiz "old friend for  "
+  m4915: .asciiz "diner           "
 
 
 
