@@ -2382,6 +2382,9 @@ MESSAGE_PRINT_BOTTOMLINE47:
 
 
 
+
+
+
 PRE_PRE_PRE_PRINT48:
   ldx #$00
   jmp PRE_PRINT48
@@ -2442,7 +2445,7 @@ PRE_PRINT49:
 
   MESSAGE_PRINT_TOPLINE49:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT49
+  beq PRE_PRE_PRE_PRINT50
   lda m49_,x
   beq START_NEWLINE49
   jsr LCD_WRITE_LETTER
@@ -2457,12 +2460,95 @@ START_NEWLINE49:
 
 MESSAGE_PRINT_BOTTOMLINE49:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT49
+  beq PRE_PRE_PRE_PRINT50
   lda m49_,x
   beq PRE_PRE_PRINT49
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE49
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT50:
+  ldx #$00
+  jmp PRE_PRINT50
+
+PRE_PRE_PRINT50:
+  inx
+PRE_PRINT50:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE50:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT51
+  lda m50_,x
+  beq START_NEWLINE50
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE50
+
+
+START_NEWLINE50:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE50:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT51
+  lda m50_,x
+  beq PRE_PRE_PRINT50
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE50
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT51:
+  ldx #$00
+  jmp PRE_PRINT51
+
+PRE_PRE_PRINT51:
+  inx
+PRE_PRINT50:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE51:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT51
+  lda m51_,x
+  beq START_NEWLINE51
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE50
+
+
+START_NEWLINE51:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE51:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT51
+  lda m51_,x
+  beq PRE_PRE_PRINT51
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE51
 
 
 
@@ -3552,12 +3638,49 @@ MESSAGES:
   m497: .asciiz "I feel right at "
   m498: .asciiz "home: psych ward"
   m499: .asciiz "I don't do this "
-  m4910: .asciiz "often but, can "
-  m4911: .asciiz "Your eyes stay "
-  m4912: .asciiz "closed for now "
+  m4910: .asciiz "often but, can  "
+  m4911: .asciiz "Your eyes stay  "
+  m4912: .asciiz "closed for now  "
   m4913: .asciiz "I'm having an   "
   m4914: .asciiz "old friend for  "
   m4915: .asciiz "diner           "
+
+
+
+
+  m50_: .asciiz "The Whooper wave"
+  m502: .asciiz "Is upon us      "
+  m503: .asciiz "Its in the main "
+  m504: .asciiz "method bozo!    "
+  m505: .asciiz "you sat here    "
+  m506: .asciiz "cause cool club "
+  m507: .asciiz "Whats goin on   "
+  m508: .asciiz "here?!?!?!?!?!?!"
+  m509: .asciiz "This is gonna be"
+  m5010: .asciiz "platinum. PL    "
+  m5011: .asciiz "Your neck is    "
+  m5012: .asciiz "easy to break   "
+  m5013: .asciiz "Go on name every"
+  m5014: .asciiz "boat. Go on     "
+  m5015: .asciiz "yeah, thats what"
+
+
+
+  m51_: .asciiz "Give it about   "
+  m512_: .asciiz "the same # juice"
+  m513_: .asciiz "The middle man  "
+  m514_: .asciiz "was outside us  "
+  m515_: .asciiz "Allergic to     "
+  m516: .asciiz "horse > 50 miles"
+  m517: .asciiz "Boxing ring vs  "
+  m518: .asciiz "dolphin.        "
+  m519: .asciiz "Bruh this game  "
+  m5110: .asciiz "is racist       "
+  m5111: .asciiz "defamation is my"
+  m5112: .asciiz "ally in war     "
+  m5113: .asciiz "Requested cheese"
+  m5114: .asciiz "burger with bun "
+  m5115: .asciiz "recived pickle  "
 
 
 
