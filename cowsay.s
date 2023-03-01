@@ -921,9 +921,6 @@ PRE_PRINT14:
   jsr PRE_PRINTSUB
 
 
-
-
-  
 MESSAGE_PRINT_TOPLINE14:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT15
@@ -947,6 +944,11 @@ MESSAGE_PRINT_BOTTOMLINE14:
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE14
+
+
+
+
+
 
 
 
@@ -2520,7 +2522,7 @@ PRE_PRE_PRE_PRINT51:
 
 PRE_PRE_PRINT51:
   inx
-PRE_PRINT50:
+PRE_PRINT51:
   nop
   jsr PRE_PRINTSUB
 
@@ -2528,7 +2530,7 @@ PRE_PRINT50:
 
   MESSAGE_PRINT_TOPLINE51:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT51
+  beq PRE_PRE_PRE_PRINT52
   lda m51_,x
   beq START_NEWLINE51
   jsr LCD_WRITE_LETTER
@@ -2543,13 +2545,179 @@ START_NEWLINE51:
 
 MESSAGE_PRINT_BOTTOMLINE51:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT51
+  beq PRE_PRE_PRE_PRINT52
   lda m51_,x
   beq PRE_PRE_PRINT51
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE51
 
+
+
+
+
+PRE_PRE_PRE_PRINT52:
+  ldx #$00
+  jmp PRE_PRINT52
+
+PRE_PRE_PRINT52:
+  inx
+PRE_PRINT52:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE52:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT53
+  lda m52_,x
+  beq START_NEWLINE52
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE52
+
+
+START_NEWLINE52:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE52:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT53
+  lda m52_,x
+  beq PRE_PRE_PRINT52
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE52
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT53:
+  ldx #$00
+  jmp PRE_PRINT53
+
+PRE_PRE_PRINT53:
+  inx
+PRE_PRINT53:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE53:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT54
+  lda m53_,x
+  beq START_NEWLINE53
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE53
+
+
+START_NEWLINE53:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE53:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT54
+  lda m53_,x
+  beq PRE_PRE_PRINT53
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE53
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT54:
+  ldx #$00
+  jmp PRE_PRINT54
+
+PRE_PRE_PRINT54:
+  inx
+PRE_PRINT54:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE54:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT55
+  lda m54_,x
+  beq START_NEWLINE54
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE54
+
+
+START_NEWLINE54:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE54:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT55
+  lda m54_,x
+  beq PRE_PRE_PRINT54
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE54
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT55:
+  ldx #$00
+  jmp PRE_PRINT55
+
+PRE_PRE_PRINT55:
+  inx
+PRE_PRINT55:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE55:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT55
+  lda m54_,x
+  beq START_NEWLINE55
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE55
+
+
+START_NEWLINE55:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE55:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT55
+  lda m55_,x
+  beq PRE_PRE_PRINT55
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE55
 
 
 
@@ -3681,6 +3849,64 @@ MESSAGES:
   m5113: .asciiz "Requested cheese"
   m5114: .asciiz "burger with bun "
   m5115: .asciiz "recived pickle  "
+
+
+
+
+
+  m53_: .asciiz "Right-Wing Hip  "
+  m532: .asciiz "hop goes hard   "
+  m533: .asciiz "Is that part of "
+  m534: .asciiz "the heart?      "
+  m535: .asciiz "I have 2,000,000"
+  m536: .asciiz "in rise of kings"
+  m537: .asciiz "WYR: Dust Bowl  "
+  m538: .asciiz "or 1800s Worker "
+  m539: .asciiz "Housing market  "
+  m5310: .asciiz "crash of 2008 =("
+  m5311: .asciiz "Extrude from dye"
+  m5312: .asciiz "green to blue   "
+  m5313: .asciiz "In the midst of "
+  m5314: .asciiz "chaos, there is "
+  m5315: .asciiz "also opportunity"
+
+
+
+
+  m54_: .asciiz "The wise one    "
+  m542: .asciiz "avoids the war  "
+  m543: .asciiz "Be where your   "
+  m544: .asciiz "enemy is not!   "
+  m545: .asciiz "it tastes like  "
+  m546: .asciiz "cheese v2.0.4   "
+  m547: .asciiz "Hello, it's me  "
+  m548: .asciiz "Jack Nicholson  "
+  m549: .asciiz "I'm on set for  "
+  m5410: .asciiz "The Departed and"
+  m5411: .asciiz "I need a copy of"
+  m5412: .asciiz "Yoshi's Woolly  "
+  m5413: .asciiz "World for the   "
+  m5414: .asciiz "Nintendo 64. I  "
+  m5415: .asciiz "need this game  "
+
+
+
+
+  m55_: .asciiz "Fear = Zepplin  "
+  m552: .asciiz "in BTD6         "
+  m553: .asciiz "My email has    "
+  m554: .asciiz "90,000 messages "
+  m555: .asciiz "How do I unlock "
+  m556: .asciiz "these fortunes  "
+  m557: .asciiz "Tape measures   "
+  m558: .asciiz "snap back well  "
+  m559: .asciiz "Oreo's on the   "
+  m5510: .asciiz "table......gone "
+  m5511: .asciiz "Theft is best   "
+  m5512: .asciiz "durring midnight"
+  m5513: .asciiz "Satellites delay"
+  m5514: .asciiz "the speed of my "
+  m5515: .asciiz "video games     "
 
 
 
