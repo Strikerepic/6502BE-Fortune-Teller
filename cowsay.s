@@ -3912,6 +3912,86 @@ MESSAGES:
 
 
 
+  m56_: .asciiz "Ya know, I'll   "
+  m562: .asciiz "take the free PR"
+  m563: .asciiz "The daily       "
+  m564: .asciiz "happenings do   "
+  m565: .asciiz "To look like one"
+  m566: .asciiz "steal the photo "
+  m567: .asciiz "Your not rockin "
+  m568: .asciiz "with that?      "
+  m569: .asciiz "Said actually   "
+  m5610: .asciiz "thats crazy!!!!"
+  m5611: .asciiz "Practice like   "
+  m5612: .asciiz "you lose        "
+  m5613: .asciiz "See her once    "
+  m5614: .asciiz "mind impression "
+  m5615: .asciiz "bad memory      "
+
+
+
+
+
+  m57_: .asciiz "Touch the wire  "
+  m572: .asciiz "electrical shock"
+  m573: .asciiz "Lets go through "
+  m574: .asciiz "the chronicles  "
+  m575: .asciiz "I heard you are "
+  m576: .asciiz "in urgent need  "
+  m577: .asciiz "I set you up    "
+  m578: .asciiz "reamin still    "
+  m579: .asciiz "Take the ball,  "
+  m5710: .asciiz "I bounce it!    "
+  m5711: .asciiz "Beep-Bop-Booop  "
+  m5712: .asciiz "Flip-Phone      "
+  m5713: .asciiz "Like on your    "
+  m5714: .asciiz "fridge. hm?     "
+  m5715: .asciiz "SHUT UP!!!!!!!!!"
+
+
+
+
+
+  m58_: .asciiz "It starts weak  "
+  m582: .asciiz "replace after   "
+  m583: .asciiz "It's the same   "
+  m584: .asciiz "thing. Why?     "
+  m585: .asciiz "Dude is twisted "
+  m586: .asciiz "-Er Here!    Ov-"
+  m587: .asciiz "Moral Compass   "
+  m588: .asciiz "now gone        "
+  m589: .asciiz "Roughly 57%     "
+  m5810: .asciiz "Solid Ratio!    "
+  m5811: .asciiz "Consider it 56% "
+  m5812: .asciiz "Now! HA!        "
+  m5813: .asciiz "Save all of     "
+  m5814: .asciiz "the emotions for"
+  m5815: .asciiz "the jury        "
+
+
+
+
+
+  m59_: .asciiz "Gotta Catch em  "
+  m592: .asciiz "all! Pokemon!   "
+  m593: .asciiz "It's the same   "
+  m594: .asciiz "thing. Why?     "
+  m595: .asciiz "Dude is twisted "
+  m596: .asciiz "-Er Here!    Ov-"
+  m597: .asciiz "Moral Compass   "
+  m598: .asciiz "now gone        "
+  m599: .asciiz "Roughly 57%     "
+  m5910: .asciiz "Solid Ratio!    "
+  m5911: .asciiz "Consider it 56% "
+  m5912: .asciiz "Now! HA!        "
+  m5913: .asciiz "Save all of     "
+  m5914: .asciiz "the emotions for"
+  m5915: .asciiz "the jury        "
+
+
+
+
+
 
 
 
