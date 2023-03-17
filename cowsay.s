@@ -2697,8 +2697,8 @@ PRE_PRINT55:
 
   MESSAGE_PRINT_TOPLINE55:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT55
-  lda m54_,x
+  beq PRE_PRE_PRE_PRINT56
+  lda m55_,x
   beq START_NEWLINE55
   jsr LCD_WRITE_LETTER
   inx
@@ -2712,12 +2712,336 @@ START_NEWLINE55:
 
 MESSAGE_PRINT_BOTTOMLINE55:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT55
+  beq PRE_PRE_PRE_PRINT56
   lda m55_,x
   beq PRE_PRE_PRINT55
   jsr LCD_WRITE_LETTER
   inx
   jmp MESSAGE_PRINT_BOTTOMLINE55
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT56:
+  ldx #$00
+  jmp PRE_PRINT56
+
+PRE_PRE_PRINT56:
+  inx
+PRE_PRINT56:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE56:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT57
+  lda m56_,x
+  beq START_NEWLINE56
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE56
+
+
+START_NEWLINE56:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE56:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT57
+  lda m56_,x
+  beq PRE_PRE_PRINT56
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE56
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT57:
+  ldx #$00
+  jmp PRE_PRINT57
+
+PRE_PRE_PRINT57:
+  inx
+PRE_PRINT57:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE57:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT58
+  lda m57_,x
+  beq START_NEWLINE57
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE57
+
+
+START_NEWLINE57:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE57:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT58
+  lda m57_,x
+  beq PRE_PRE_PRINT57
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE57
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT58:
+  ldx #$00
+  jmp PRE_PRINT58
+
+PRE_PRE_PRINT58:
+  inx
+PRE_PRINT58:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE58:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT59
+  lda m58_,x
+  beq START_NEWLINE58
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE58
+
+
+START_NEWLINE58:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE58:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT59
+  lda m58_,x
+  beq PRE_PRE_PRINT58
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE58
+
+
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT59:
+  ldx #$00
+  jmp PRE_PRINT59
+
+PRE_PRE_PRINT59:
+  inx
+PRE_PRINT59:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE59:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT60
+  lda m59_,x
+  beq START_NEWLINE59
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE59
+
+
+START_NEWLINE59:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE59:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT60
+  lda m59_,x
+  beq PRE_PRE_PRINT59
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE59
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT60:
+  ldx #$00
+  jmp PRE_PRINT60
+
+PRE_PRE_PRINT60:
+  inx
+PRE_PRINT60:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE60:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT61
+  lda m60_,x
+  beq START_NEWLINE60
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE60
+
+
+START_NEWLINE60:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE60:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT61
+  lda m60_,x
+  beq PRE_PRE_PRINT60
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE60
+
+
+
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT61:
+  ldx #$00
+  jmp PRE_PRINT61
+
+PRE_PRE_PRINT61:
+  inx
+PRE_PRINT61:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE61:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT62
+  lda m61_,x
+  beq START_NEWLINE61
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE61
+
+
+START_NEWLINE61:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE61:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT62
+  lda m61_,x
+  beq PRE_PRE_PRINT61
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE61
+
+
+
+
+
+
+PRE_PRE_PRE_PRINT62:
+  ldx #$00
+  jmp PRE_PRINT62
+
+PRE_PRE_PRINT62:
+  inx
+PRE_PRINT62:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE62:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT63
+  lda m62_,x
+  beq START_NEWLINE62
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE62
+
+
+START_NEWLINE62:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE62:
+  cpx #$FF
+  beq PRE_PRE_PRE_PRINT63
+  lda m62_,x
+  beq PRE_PRE_PRINT62
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE62
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
 
 
@@ -3987,6 +4311,64 @@ MESSAGES:
   m5913: .asciiz "Save all of     "
   m5914: .asciiz "the emotions for"
   m5915: .asciiz "the jury        "
+
+
+
+
+  m60_: .asciiz "Erratic behavior"
+  m602: .asciiz "elevator decends"
+  m603: .asciiz "The note. Whats "
+  m604: .asciiz "on it nothing!  "
+  m605: .asciiz "WAIT! You didn't"
+  m606: .asciiz "think to inquire"
+  m607: .asciiz "I just can't    "
+  m608: .asciiz "my mind is b<7!3"
+  m609: .asciiz "BofA is the     "
+  m6010: .asciiz "WORST!          "
+  m6011: .asciiz "Battery Dead =  "
+  m6012: .asciiz "No workey? :(   "
+  m6013: .asciiz "Yo-Yo on the car"
+  m6014: .asciiz "earns you a scar"
+  m6015: .asciiz "youve been Yo-yo"
+
+
+
+
+
+  m61_: .asciiz "Wait wait wait! "
+  m612_: .asciiz "u got no friends"
+  m613_: .asciiz "You really exude"
+  m614_: .asciiz "big Ohio energy "
+  m615_: .asciiz "Just look at him"
+  m616: .asciiz "he speaks it!   "
+  m617: .asciiz "Ay Yo! who wants"
+  m618: .asciiz "da bread bag?   "
+  m619: .asciiz "Buy Christmas   "
+  m6110: .asciiz "a day late!     "
+  m6111: .asciiz "Eat fruit strip "
+  m6112: .asciiz "cautiously      "
+  m6113: .asciiz "I'm just gonna  "
+  m6114: .asciiz "remain silent   "
+  m6115: .asciiz "5th Amendment   "
+
+
+
+
+  m62_: .asciiz "Got that   Paw-"
+  m622: .asciiz "Patrol band-aid"
+  m623: .asciiz "The note. Whats "
+  m624: .asciiz "on it nothing!  "
+  m625: .asciiz "You're Bluffing "
+  m626: .asciiz "*Pushes button* "
+  m627: .asciiz "Lights Out. The "
+  m628: .asciiz "escape begins   "
+  m629: .asciiz "It recorded the "
+  m6210: .asciiz "wrong audio data"
+  m6211: .asciiz "  Kickstart &   "
+  m6212: .asciiz "     Restart    "
+  m6213: .asciiz "I've commited   "
+  m6214: .asciiz "100%. Everything"
+  m6215: .asciiz "on the table... "
 
 
 
