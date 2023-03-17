@@ -1377,7 +1377,7 @@ PRE_PRINT24:
 
 MESSAGE_PRINT_TOPLINE24:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT24
+  beq PRE_PRE_PRE_PRINT25
   lda m24_,x
   beq START_NEWLINE24
   jsr LCD_WRITE_LETTER
@@ -1392,7 +1392,7 @@ START_NEWLINE24:
 
 MESSAGE_PRINT_BOTTOMLINE24:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT24
+  beq PRE_PRE_PRE_PRINT25
   lda m24_,x
   beq PRE_PRE_PRINT24
   jsr LCD_WRITE_LETTER
@@ -3030,6 +3030,57 @@ MESSAGE_PRINT_BOTTOMLINE62:
 
 
 
+PRE_PRE_PRE_PRINT63:
+  ldx #$00
+  jmp PRE_PRINT63
+
+PRE_PRE_PRINT63:
+  inx
+PRE_PRINT63:
+  nop
+  jsr PRE_PRINTSUB
+
+
+
+  MESSAGE_PRINT_TOPLINE63:
+  cpx #$FF
+  beq WarpJump
+  lda m63_,x
+  beq START_NEWLINE63
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_TOPLINE63
+
+
+START_NEWLINE63:
+  lda #%0011000000    ; Start at the begining of the second line
+  jsr LCD_COMMAND
+  inx
+
+MESSAGE_PRINT_BOTTOMLINE63:
+  cpx #$FF
+  beq WarpJump
+  lda m63_,x
+  beq PRE_PRE_PRINT63
+  jsr LCD_WRITE_LETTER
+  inx
+  jmp MESSAGE_PRINT_BOTTOMLINE63
+
+
+
+
+
+
+
+
+
+WarpJump:
+  jmp PRE_PRE_PRE_PRINT2
+
+
+
+
+
 
 
 
@@ -4177,6 +4228,25 @@ MESSAGES:
 
 
 
+  m52_: .asciiz "Libel & Slander "
+  m522: .asciiz "Pen beats sword?"
+  m523: .asciiz "d-f-d-d-f-d     "
+  m524: .asciiz "is it raining?  "
+  m525: .asciiz "Look at all the "
+  m526: .asciiz "blinky lights!  "
+  m527: .asciiz "01110111 thats  "
+  m528: .asciiz "binary for w www"
+  m529: .asciiz "The rivers flow "
+  m5210: .asciiz "in the desert   "
+  m5211: .asciiz "Focus. look     "
+  m5212: .asciiz "at the flame    "
+  m5213: .asciiz "Glance into the "
+  m5214: .asciiz "future with the "
+  m5215: .asciiz "flame....       "
+
+
+
+
 
   m53_: .asciiz "Right-Wing Hip  "
   m532: .asciiz "hop goes hard   "
@@ -4369,6 +4439,28 @@ MESSAGES:
   m6213: .asciiz "I've commited   "
   m6214: .asciiz "100%. Everything"
   m6215: .asciiz "on the table... "
+
+
+
+
+
+  m63_: .asciiz "Revenge is more "
+  m632: .asciiz "sweet than sugar"
+  m633: .asciiz "Oh! The 6502 is "
+  m634: .asciiz "evolving! =>6503"
+  m635: .asciiz "Black Knight    ""
+  m636: .asciiz "Black Kite      "
+  m637: .asciiz "Show me the way "
+  m638: .asciiz "red carpet!     "
+  m639: .asciiz "Iiiiitttt'ssss! "
+  m6310: .asciiz "   Togedemaru   "
+  m6311: .asciiz "John Is a man   "
+  m6312: .asciiz "of focus...     "
+  m6313: .asciiz "It's all to play"
+  m6314: .asciiz "for. The heist  "
+  m6315: .asciiz "commences now!  "
+
+
 
 
 
