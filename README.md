@@ -33,4 +33,13 @@ breaking the fourth wall. Thus, I decided to use an IR remote to communicate wit
 Although there is much more that I would love to do with this project, I believe it is appropriate to release what I have now. Please stay tuned for updates or any suggestions you may have, and feel free to contact me.
 
 Thank you,
-CSB
+
+Code By:
+    ____ _    ______ 
+   / __ ) |  / / __ \
+  / __  | | / / /_/ /
+ / /_/ /| |/ / _, _/ 
+/_____/ |___/_/ |_|
+====================
+
+
