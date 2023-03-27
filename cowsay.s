@@ -98,7 +98,8 @@ PRE_PRINT:
 
 
 
-
+  sei  ; sets Interputs to not work during the warning message
+  
 MESSAGE_PRINT_TOPLINE:
   cpx #$FF
   beq PRE_PRE_PRE_PRINT2
@@ -116,7 +117,7 @@ START_NEWLINE:
 
 MESSAGE_PRINT_BOTTOMLINE:
   cpx #$FF
-  beq PRE_PRE_PRE_PRINT2
+  beq LongWaitStart
   lda message1,x
   beq PRE_PRE_PRINT
   jsr LCD_WRITE_LETTER
@@ -125,23 +126,20 @@ MESSAGE_PRINT_BOTTOMLINE:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+LongWaitStart:
+  ldx #$ff
+LongWait:
+  dex
+  bne LongWait
+  jmp PRE_PRE_PRE_PRINT2
+  
 
 
 
 
 
 PRE_PRE_PRE_PRINT2:
+  cli
   ldx #$00
   jmp PRE_PRINT2
 
@@ -149,31 +147,7 @@ PRE_PRE_PRINT2:
   inx
 PRE_PRINT2:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -216,31 +190,7 @@ PRE_PRE_PRINT3:
   inx
 PRE_PRINT3:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -289,30 +239,7 @@ PRE_PRE_PRINT4:
   inx
 PRE_PRINT4:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
   
@@ -358,31 +285,7 @@ PRE_PRE_PRINT5:
   inx
 PRE_PRINT5:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -433,31 +336,7 @@ PRE_PRE_PRINT6:
   inx
 PRE_PRINT6:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -507,31 +386,7 @@ PRE_PRE_PRINT7:
   inx
 PRE_PRINT7:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -585,31 +440,7 @@ PRE_PRE_PRINT8:
   inx
 PRE_PRINT8:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -655,31 +486,7 @@ PRE_PRE_PRINT9:
   inx
 PRE_PRINT9:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -721,31 +528,7 @@ PRE_PRE_PRINT10:
   inx
 PRE_PRINT10:
   nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-
-  lda #%00000001 ; Clears Display 
-  jsr LCD_COMMAND
-
-  lda #%00000010 ; Returns home
-  jsr LCD_COMMAND
+  jsr PRE_PRINTSUB
 
 
 
@@ -980,12 +763,6 @@ MESSAGE_PRINT_BOTTOMLINE14:
 
 
 
-
-
-
-
-
-
 PRE_PRE_PRE_PRINT15:
   ldx #$00
   jmp PRE_PRINT15
@@ -1038,8 +815,6 @@ PRE_PRINT16:
   nop
   jsr PRE_PRINTSUB
 
-  
-
 
 MESSAGE_PRINT_TOPLINE16:
   cpx #$FF
@@ -1048,7 +823,7 @@ MESSAGE_PRINT_TOPLINE16:
   beq START_NEWLINE16
   jsr LCD_WRITE_LETTER
   inx
-  jmp MESSAGE_PRINT_TOPLINE17
+  jmp MESSAGE_PRINT_TOPLINE16
 
 
 START_NEWLINE16:
@@ -1108,10 +883,6 @@ MESSAGE_PRINT_BOTTOMLINE17:
 
 
   
-
-
-
-
 
 
 
@@ -3918,20 +3689,20 @@ MESSAGES:
    
  
   message1: .asciiz "What follows is "
-  message2: .asciiz "a great list of "
-  message3: .asciiz "Info.   Code by:"
-  message4: .asciiz "------BVR-------"
-  message5: .asciiz "                "
-  message6: .asciiz "Cold Hands, but "
-  message7: .asciiz "no gloves...    "
-  message8: .asciiz "Day of inquiry  "
-  message9: .asciiz "subpoena close.."
-  message10: .asciiz "Bank error in   "
-  message11: .asciiz "your favor +$20 "
-  message12: .asciiz "Artsy ventures? "
-  message13: .asciiz "go rob a museum "
-  message14: .asciiz "break into jail "
-  message15: .asciiz "cop   brutality "
+  message2: .asciiz "The BE-6502     "
+  message3: .asciiz "Fortune Machine."
+  message4: .asciiz "As mentioned in "
+  message5: .asciiz "the license, any"
+  message6: .asciiz "alterations to  "
+  message7: .asciiz "any code must be"
+  message8: .asciiz "disclosed and a "
+  message9: .asciiz "name must be     "
+  message10: .asciiz "shown in Bank 1 "
+  message11: .asciiz "Altered By:     "
+  message12: .asciiz "                "
+  message13: .asciiz "                "
+  message14: .asciiz "Original Code By"
+  message15: .asciiz "      BVR       "
 
 
 
